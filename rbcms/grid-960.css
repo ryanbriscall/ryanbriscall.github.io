@@ -1,0 +1,43 @@
+/* rbGrid 960, 12col */
+.grid-clear { clear: both; }
+
+.grid-twelve { width: 960px; margin: 0 auto; }
+
+.grid-twelve .grid-one-twelfth { width: 80px; float: left; min-height: 1px; }
+
+.grid-twelve .grid-two-twelfth,
+.grid-twelve .grid-one-sixth { width: 160px; float: left; min-height: 1px; }
+
+.grid-twelve .grid-three-twelfth,
+.grid-twelve .grid-one-fourth { width: 240px; float: left; min-height: 1px; } /* 1/4 */
+
+.grid-twelve .grid-four-twelfth,
+.grid-twelve .grid-two-sixth, 
+.grid-twelve .grid-one-third { width: 320px; float: left; min-height: 1px; } /* 1/3 */
+
+.grid-twelve .grid-five-twelfth { width: 400px; float: left; min-height: 1px; }
+
+.grid-twelve .grid-six-twelfth, 
+.grid-twelve .grid-two-fourth, 
+.grid-twelve .grid-one-half { width: 480px; float: left; min-height: 1px; } /* 1/2 */
+
+.grid-twelve .grid-seven-twelfth { width: 560px; float: left; min-height: 1px; }
+
+.grid-twelve .grid-eight-twelfth,
+.grid-twelve .grid-four-sixth, 
+.grid-twelve .grid-two-third { width: 640px; float: left; min-height: 1px; }
+
+.grid-twelve .grid-nine-twelfth, 
+.grid-twelve .grid-three-fourth { width: 720px; float: left; min-height: 1px; }
+
+.grid-twelve .grid-ten-twelfth, 
+.grid-twelve .grid-five-sixth { width: 800px; float: left; min-height: 1px; }
+
+.grid-twelve .grid-eleven-twelfth { width: 880px; float: left; min-height: 1px; }
+
+/*** Non-standard */
+.grid-twelve .grid-one-fifth { width: 192px; float: left; min-height: 1px; }
+.grid-twelve .grid-four-fifth { width: 768px; float: left; min-height: 1px; }
+
+.grid-twelve, 
+.grid-row { float: none; }
