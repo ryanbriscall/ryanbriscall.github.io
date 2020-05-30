@@ -1,0 +1,92 @@
+@page {
+    size: A4;
+}
+
+* {
+    background: #fff;
+    color: #000;
+}
+
+html {
+    font: 100%/1.5 "Trebuchet MS", Trebuchet, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    font-size: 22px;
+}
+
+#header,
+#panel-menu,
+#social-menu,
+#slogan,
+#main>*:not(main),
+#footer,
+#btn-scroller,
+#back-to-top {
+    display: none;
+}
+
+#logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#content-index {
+    display: block !important;
+}
+
+#content-index .index {
+    font-size: 1.5em;
+}
+
+a[href^="http"]:after {
+    content: " ("attr(href) ")";
+}
+
+a[href^="/"]:after {
+    content: " (ryanbriscall.com"attr(href) ")";
+}
+
+section.projects a[href^="http"]:after,
+a[href="/"]:after {
+    content: "";
+}
+
+a[href^="#"] {
+    text-decoration: none;
+}
+
+article h2 {
+    page-break-before: always;
+    break-before: page;
+}
+
+article h2,
+article h3 {
+    page-break-after: avoid;
+    break-after: avoid-page;
+}
+
+figure {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+figure.website {
+    display: none;
+}
+
+p,
+ul {
+    orphans: 2;
+    widows: 2;
+}
+
+figure {
+    margin: 0;
+}
+
+abbr {
+    text-decoration: none;
+}
