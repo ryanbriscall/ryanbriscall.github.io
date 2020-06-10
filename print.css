@@ -45,7 +45,7 @@ a[href^="http"]:after {
 }
 
 a[href^="/"]:after {
-    content: " (ryanbriscall.com"attr(href) ")";
+    content: " (ryanbriscall.github.io"attr(href) ")";
 }
 
 section.projects a[href^="http"]:after,
