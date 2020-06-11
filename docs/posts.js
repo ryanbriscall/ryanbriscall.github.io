@@ -6,6 +6,7 @@ var posts = [
     'Custom-Python-Installation',
     'Executing-Python-Scripts',
     'Prevent-phpMyAdmin-Logout-Session-Timeout',
+    'WordPress-Database-User-Grant-Least-Privileges',
     'robocopy-ERROR-Invalid-Parameter-4',
     'Using-Xcopy-to-Backup-Files',
     'Reading-Framework-Source-Code',
