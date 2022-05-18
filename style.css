@@ -60,9 +60,9 @@ img {
     font-size: 12px;
 }
 
-@media (min-width: 400px) and (max-width: 1220px) {
+@media (min-width: 769px) and (max-width: 1220px) {
     :root {
-        font-size: calc(12px + (22 - 12) * ((100vw - 400px) / (1220 - 400)));
+        font-size: calc(20 * (100vw / 1220));
     }
 }
 
