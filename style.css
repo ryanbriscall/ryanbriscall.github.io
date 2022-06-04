@@ -430,6 +430,53 @@ figure.website.framed ul {
     margin-top: 0;
 }
 
+body.video { overflow: hidden; }
+.player {
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.98);
+    display: table;
+}
+.player > .close {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.player > div {
+    width: 100%;
+    height: 100vh;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 5vw;
+}
+.player > div > div {
+    position: relative;
+}
+.player iframe,
+.player embed,
+.player object,
+.player video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 11;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border: 0;
+}
+
 @media (min-width: 0) and (max-width: 450px) {
     figure.website img {
         max-width: 100%;
