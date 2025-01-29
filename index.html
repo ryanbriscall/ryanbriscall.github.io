@@ -30,15 +30,24 @@
 	</script>
 	<link href="arkslate.css" rel="stylesheet">
 	<script src="arkslate.js"></script>
-	<style>article img { max-width: 100%; height: auto; }</style>
+	<script>
+	function videoOver(el) { el.closest('.video').querySelector('video').play(); }
+	function videoOut(el) { el.closest('.video').querySelector('video').pause(); }
+	</script>
+	<style>
+	article img { max-width: 100%; height: auto; }
+	.zip { background-position: 0.175em 0.3em; background-size: auto 1em; background-repeat: no-repeat; background-image: url(img/zip-64.png); padding-left: 1.5em; }
+	.rar { background-position: 0.175em 0.3em; background-size: auto 1em; background-repeat: no-repeat; background-image: url(img/rar-64.png); padding-left: 1.5em; }
+	</style>
 </head>
-<body class="m0" style="background:#000 url(img/ryanbriscall.jpg) 50% -2em/calc(1280em/24) calc(360em/24) no-repeat; padding-top:8em; line-height:1.6">
+<body class="m0 textshadow1 scroll" style="background:#000 url(img/ryanbriscall.jpg) 50% -2em/calc(1280em/24) calc(360em/24) no-repeat; padding-top:8em; line-height:1.6">
 	<main class="p1" style="background:linear-gradient(180deg, transparent 0%, #111 10%, #111)">
 		<div class="center" style="max-width:calc(760em/28)">
 			<nav class="tabs tabbed">
 				<a href="javascript:" data-id="otab1">Experience</a>
 				<a href="javascript:" data-id="otab0">Projects</a>
 				<a href="javascript:" data-id="otab2">Tools</a>
+				<a href="javascript:" data-id="otab3">Apps</a>
 			</nav>
 			<article data-tab="otab1" class="tab">
 				<header>
@@ -396,7 +405,6 @@
 
 				
 			</section>
-
 			<section data-tab="otab2" class="tab">
 				<article class="panel my1 boxshadow2">
 					<header>
@@ -408,19 +416,30 @@
 					<p>See <a href="https://ryanbriscall.github.io/WordToHtml/">https://ryanbriscall.github.io/WordToHtml/</a></p>
 				</article>
 			</section>
+			<section data-tab="otab3" class="tab">
+				<article class="panel my1 boxshadow2">
+					<header>
+						<time datetime="2025-01-27" class="right sm none">Jan 27, 2025</time>
+						<h2 class="m0 lh2 green textshadow1">Briscall Media Pro <span class="block muted sm">App</span></h2>
+						<img src="img/briscallmediapro.png" alt="Briscall Media Pro screenshot." class="block boxshadow2 border8 rounded3 mw100 mt3 mb2">
+					</header>
+					<p>This app is a multi-player media player, hand crafted, using C#, and .NET.  It is primarily used for ambience with seamless looping.</p>
+					<p>See <a href="https://shop.slipgate.ca/23/" title="Briscall Media Pro website">https://shop.slipgate.ca/23/</a></p>
+				</article>
+			</section>
 		</div>
 	</main>
 	<aside class="textcenter p1 sm" style="background:linear-gradient(180deg, #000 10%, #080808 50%, #000 90%)">
 		<nav>
-			<a class="button" href="https://www.facebook.com/ryanbriscall" aria-label="Ryan Briscall's FaceBook">FaceBook</a>
-			<a class="button" href="https://www.twitter.com/ryanbriscall" aria-label="Ryan Briscall's Twitter">Twitter</a>
-			<a class="button" href="https://www.linkedin.com/pub/ryan-briscall/59/b82/88b" aria-label="Ryan Briscall's LinkedIn">LinkedIn</a>
-			<a class="button" href="https://github.com/ryanbriscall" aria-label="Ryan Briscall's GitHub">GitHub</a>
-			<a class="button" href="https://stackoverflow.com/users/1191160/ryan-briscall" aria-label="Ryan Briscall's StackOverflow">StackOverflow</a>
+			<a class="button inlineblock m3" href="https://www.facebook.com/ryanbriscall" title="Ryan Briscall's FaceBook">FaceBook</a>
+			<a class="button inlineblock m3" href="https://www.twitter.com/ryanbriscall" title="Ryan Briscall's Twitter">Twitter</a>
+			<a class="button inlineblock m3" href="https://www.linkedin.com/pub/ryan-briscall/59/b82/88b" title="Ryan Briscall's LinkedIn">LinkedIn</a>
+			<a class="button inlineblock m3" href="https://github.com/ryanbriscall" title="Ryan Briscall's GitHub">GitHub</a>
+			<a class="button inlineblock m3" href="https://stackoverflow.com/users/1191160/ryan-briscall" title="Ryan Briscall's StackOverflow">StackOverflow</a>
 		</nav>
 		<nav>
-			<a class="button" href="https://www.designpics.com/search/en/filter/sres100sord2ssid56149" aria-label="Ryan Briscall DesignPics">DesignPics<span class="none">&trade; Stock Photos</span></a>
-			<a class="button" href="https://ryanbriscall.printscapes.com/" aria-label="Ryan Briscall Printscapes">Printscapes<span class="none">&trade; Stock Photos</span></a>
+			<a class="button inlineblock m3" href="https://www.designpics.com/search/en/filter/sres100sord2ssid56149" title="Ryan Briscall DesignPics">DesignPics<span class="none">&trade; Stock Photos</span></a>
+			<a class="button inlineblock m3" href="https://ryanbriscall.printscapes.com/" title="Ryan Briscall Printscapes">Printscapes<span class="none">&trade; Stock Photos</span></a>
 		</nav>
 	</aside>
 </body>
