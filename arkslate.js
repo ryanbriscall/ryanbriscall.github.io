@@ -50,37 +50,22 @@ function removeCookie(n, o) {
 }
 
 function tabs() {
-	var c = getCookie('tabs');
-	if (c) {
-		var ids = c.split(',');
-		ids.forEach(function(id) {
-			var t = document.querySelector('.tabs [data-id="'+id+'"]');
-			if (t) {
-				if (t.tagName == 'INPUT') {
-					t.checked = true;
-				}
-				t.classList.add('active');
-				document.querySelector('[data-tab="'+id+'"]').classList.add('active');
-			}
-		});
-	}
-
-	document.querySelectorAll('.tabs').forEach(function(nav, idx) {
-		var els = nav.querySelectorAll('[data-id]');
+	document.querySelectorAll(".tabs").forEach(function (nav, idx) {
+		var els = nav.querySelectorAll("[data-tab-id]");
 		var active = [];
-		els.forEach(function(tab) {
-			if (tab.classList.contains('active')) {
-				active.push(tab.dataset.id);
+		els.forEach(function (tab) {
+			if (tab.classList.contains("active")) {
+				active.push(tab.dataset.tabId);
 			}
 		});
 
 		for (let i = 0; i < els.length; i++) {
-			'click keydown'.split(' ').forEach(function(evt) {
-				els[i].addEventListener(evt, function(e) {
-					if (evt == 'keydown' && e.which !== 13) {
+			"click keydown".split(" ").forEach(function (evt) {
+				els[i].addEventListener(evt, function (e) {
+					if (evt == "keydown" && e.which !== 13) {
 						return;
 					}
-					if (!this.classList.contains('disabled')) {
+					if (!this.classList.contains("disabled")) {
 						next(this);
 					}
 					return false;
@@ -94,37 +79,28 @@ function tabs() {
 	});
 
 	function next(tab) {
-		var tabId = tab.dataset.id;
+		var tabId = tab.dataset.tabId;
 
-		var parent = tab.closest('.tabs');
-		var els = parent.querySelectorAll('[data-id]');
+		var parent = tab.closest(".tabs");
+		var els = parent.querySelectorAll("[data-tab-id]");
 
 		for (var i = 0; i < els.length; i++) {
-			var id = els[i].dataset.id;
+			var id = els[i].dataset.tabId;
 
 			if (id == tabId) {
-				els[i].classList.add('active');
-				document.querySelector('[data-tab="'+id+'"]').classList.add('active');
-			}
-			else {
-				els[i].classList.remove('active');
-				document.querySelector('[data-tab="'+id+'"]').classList.remove('active');
-			}
-		}
-
-		var active = [];
-		els2 = document.querySelectorAll('.tabs [data-id]');
-		for (var i = 0; i < els2.length; i++) {
-			if (els2[i].classList.contains('active')) {
-				active.push(els2[i].dataset.id);
+				els[i].classList.add("active");
+				document
+					.querySelector('[data-tab="' + id + '"]')
+					.classList.add("active");
+			} else {
+				els[i].classList.remove("active");
+				document
+					.querySelector('[data-tab="' + id + '"]')
+					.classList.remove("active");
 			}
 		}
-		setCookie('tabs', active.join(','), {
-			expires: cookiesExpiry,
-			path: cookiesPath
-		});
-	};
-};
+	}
+}
 
 function tree() {
 	document.querySelectorAll('.clk').forEach(function(el) {
