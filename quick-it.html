@@ -1,0 +1,5164 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Quick IT by Ryan Briscall</title>
+		<meta name="description" content="List of acronyms for Information Technology (IT).">
+
+		<style>
+			html {
+				font-size: 16px;
+			}
+
+			@media (min-width: 320px) and (max-width: 1200px) {
+				html {
+					font-size: calc(16px + (28 - 16) * ((100vw - 320px) / (1200 - 320)));
+				}
+			}
+
+			@media (min-width: 1200px) {
+				html {
+					font-size: 28px;
+				}
+			}
+
+			body {
+				font-family: Arial, sans-serif;
+				line-height: 1.4;
+				background: #EEE;
+				margin: 0;
+			}
+
+			#app {
+				max-width: 30em;
+				margin: 0 auto;
+				padding: 1em;
+				background: #FFF;
+			}
+
+			dl {
+				margin: 0;
+				padding: 0;
+			}
+
+			dt {
+				font-weight: bold;
+				display: inline-block;
+			}
+
+			dd {
+				display: inline-block;
+				margin-left: 1ch;
+			}
+			
+			h1 {
+				margin-top: 0;
+				text-align: center;
+			}
+
+			h1 span {
+				font-size: 0.5em;
+				display: block;
+				font-weight: normal;
+			}
+
+			input[type="text"] {
+				font-size: inherit;
+			}
+
+			.filter {
+				text-align: center;
+			}
+
+			.none {
+				display: none;
+			}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				var dts = document.querySelectorAll('dt');
+				dts.forEach(function(el) {
+					var p = el.closest('div');
+					var txt = el.textContent;
+					p.setAttribute('data-filter', 'all');
+					p.setAttribute('data-filter-by', txt);
+				});
+				var fel = document.createElement('p');
+				fel.classList.add('filter');
+				fel.innerHTML = `<label for="filter">Search:</label> <input type="text" data-filter-id="all" id="filter">`;
+				document.querySelector('h1').insertAdjacentElement('afterend', fel);
+				var els = document.querySelectorAll('[data-filter-id]');
+				els.forEach(function(el) {
+					var id = el.dataset.filterId;
+					'keyup change'.split(' ').forEach(function(evt) {
+						el.addEventListener(evt, function(e) {
+							document.querySelectorAll('[data-filter="'+id+'"]').forEach(function(el2) {
+								var r = new RegExp(el.value.toLowerCase(), "g");
+								if (el2.dataset.filterBy.toLowerCase().match(r)) {
+									el2.classList.remove('none');
+								}
+								else {
+									el2.classList.add('none');
+								}
+							});
+						});
+					});
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<h1>Quick <abbr title="Information Technology">IT</abbr> <span>by Ryan Briscall</span></h1>
+			<div><dt>2FA</dt>
+				<dd>Two-Factor Authentication</dd>
+			</div>
+			<div><dt>A+</dt>
+				<dd>CompTIA A+ Certification</dd>
+			</div>
+			<div><dt>AAA</dt>
+				<dd>Authentication, Authorization, Accounting</dd>
+			</div>
+			<div><dt>ACK</dt>
+				<dd>Acknowledgement</dd>
+			</div>
+			<div><dt>ACL</dt>
+				<dd>Access Control List</dd>
+			</div>
+			<div><dt>AD</dt>
+				<dd>Active Directory</dd>
+			</div>
+			<div><dt>ADSL</dt>
+				<dd>Asymmetric Digital Subscriber Line</dd>
+			</div>
+			<div><dt>AES</dt>
+				<dd>Advanced Encryption Standard</dd>
+			</div>
+			<div><dt>AI</dt>
+				<dd>Artificial Intelligence</dd>
+			</div>
+			<div><dt>ANSI</dt>
+				<dd>American National Standards Institute</dd>
+			</div>
+			<div><dt>API</dt>
+				<dd>Application Programming Interface</dd>
+			</div>
+			<div><dt>ARP</dt>
+				<dd>Address Resolution Protocol</dd>
+			</div>
+			<div><dt>ATM</dt>
+				<dd>Asynchronous Transfer Mode</dd>
+			</div>
+			<div><dt>AWS</dt>
+				<dd>Amazon Web Services</dd>
+			</div>
+			<div><dt>Azure</dt>
+				<dd>Microsoft Azure</dd>
+			</div>
+			<div><dt>B2B</dt>
+				<dd>Business to Business</dd>
+			</div>
+			<div><dt>B2C</dt>
+				<dd>Business to Consumer</dd>
+			</div>
+			<div><dt>BC</dt>
+				<dd>Business Continuity</dd>
+			</div>
+			<div><dt>BGP</dt>
+				<dd>Border Gateway Protocol</dd>
+			</div>
+			<div><dt>BIOS</dt>
+				<dd>Basic Input/Output System</dd>
+			</div>
+			<div><dt>BSS</dt>
+				<dd>Basic Service Set (Wi-Fi)</dd>
+			</div>
+			<div><dt>BYOD</dt>
+				<dd>Bring Your Own Device</dd>
+			</div>
+			<div><dt>BYOL</dt>
+				<dd>Bring Your Own License</dd>
+			</div>
+			<div><dt>CAB</dt>
+				<dd>Change Advisory Board</dd>
+			</div>
+			<div><dt>CAT</dt>
+				<dd>Category (e.g. CAT-5 cable)</dd>
+			</div>
+			<div><dt>CCNA</dt>
+				<dd>Cisco Certified Network Associate</dd>
+			</div>
+			<div><dt>CDN</dt>
+				<dd>Content Delivery Network</dd>
+			</div>
+			<div><dt>CEH</dt>
+				<dd>Certified Ethical Hacker</dd>
+			</div>
+			<div><dt>CI/CD</dt>
+				<dd>Continuous Integration / Continuous Deployment</dd>
+			</div>
+			<div><dt>CISSP</dt>
+				<dd>Certified Information Systems Security Professional</dd>
+			</div>
+			<div><dt>CLI</dt>
+				<dd>Command Line Interface</dd>
+			</div>
+			<div><dt>CMDB</dt>
+				<dd>Configuration Management Database</dd>
+			</div>
+			<div><dt>CMOS</dt>
+				<dd>Complementary Metal Oxide Semiconductor</dd>
+			</div>
+			<div><dt>CompTIA</dt>
+				<dd>Computing Technology Industry Association</dd>
+			</div>
+			<div><dt>CPU</dt>
+				<dd>Central Processing Unit</dd>
+			</div>
+			<div><dt>CRC</dt>
+				<dd>Cyclic Redundancy Check</dd>
+			</div>
+			<div><dt>CRM</dt>
+				<dd>Customer Relationship Management</dd>
+			</div>
+			<div><dt>CRT</dt>
+				<dd>Cathode Ray Tube</dd>
+			</div>
+			<div><dt>CSS</dt>
+				<dd>Cascading Style Sheets</dd>
+			</div>
+			<div><dt>DAM</dt>
+				<dd>Database Activity Monitoring (Security)</dd>
+			</div>
+			<div><dt>DAM</dt>
+				<dd>Digital Asset Management (Internet Layer)</dd>
+			</div>
+			<div><dt>DDoS</dt>
+				<dd>Distributed Denial of Service</dd>
+			</div>
+			<div><dt>DES</dt>
+				<dd>Data Encryption Standard</dd>
+			</div>
+			<div><dt>DHCP</dt>
+				<dd>Dynamic Host Configuration Protocol</dd>
+			</div>
+			<div><dt>DIMM</dt>
+				<dd>Dual In-line Memory Module</dd>
+			</div>
+			<div><dt>DNS</dt>
+				<dd>Domain Name System</dd>
+			</div>
+			<div><dt>DR</dt>
+				<dd>Disaster Recovery</dd>
+			</div>
+			<div><dt>DRAM</dt>
+				<dd>Dynamic Random Access Memory</dd>
+			</div>
+			<div><dt>DRP</dt>
+				<dd>Disaster Recovery Plan</dd>
+			</div>
+			<div><dt>DSL</dt>
+				<dd>Digital Subscriber Line</dd>
+			</div>
+			<div><dt>EOF</dt>
+				<dd>End Of Frame</dd>
+			</div>
+			<div><dt>EOL</dt>
+				<dd>End of Life</dd>
+			</div>
+			<div><dt>EOS</dt>
+				<dd>End of Support</dd>
+			</div>
+			<div><dt>ERP</dt>
+				<dd>Enterprise Resource Planning</dd>
+			</div>
+			<div><dt>FCC</dt>
+				<dd>Federal Communications Commission (US)</dd>
+			</div>
+			<div><dt>FTP</dt>
+				<dd>File Transfer Protocol</dd>
+			</div>
+			<div><dt>GBPS</dt>
+				<dd>Gigabit Per Second</dd>
+			</div>
+			<div><dt>GCP</dt>
+				<dd>Google Cloud Platform</dd>
+			</div>
+			<div><dt>GDPR</dt>
+				<dd>General Data Protection Regulation</dd>
+			</div>
+			<div><dt>GPO</dt>
+				<dd>Group Policy Object</dd>
+			</div>
+			<div><dt>GPU</dt>
+				<dd>Graphics Processing Unit</dd>
+			</div>
+			<div><dt>GUI</dt>
+				<dd>Graphical User Interface</dd>
+			</div>
+			<div><dt>HDD</dt>
+				<dd>Hard Disk Drive</dd>
+			</div>
+			<div><dt>HIPAA</dt>
+				<dd>Health Insurance Portability and Accountability Act</dd>
+			</div>
+			<div><dt>HTML</dt>
+				<dd>Hypertext Markup Language</dd>
+			</div>
+			<div><dt>HTTP</dt>
+				<dd>Hypertext Transfer Protocol</dd>
+			</div>
+			<div><dt>HTTPS</dt>
+				<dd>Hypertext Transfer Protocol Secure</dd>
+			</div>
+			<div><dt>IaaS</dt>
+				<dd>Infrastructure as a Service</dd>
+			</div>
+			<div><dt>IaC</dt>
+				<dd>Infrastructure as Code</dd>
+			</div>
+			<div><dt>ICMP</dt>
+				<dd>Internet Control Message Protocol</dd>
+			</div>
+			<div><dt>IDE</dt>
+				<dd>Integrated Development Environment</dd>
+			</div>
+			<div><dt>IDS</dt>
+				<dd>Intrusion Detection System</dd>
+			</div>
+			<div><dt>IMAP</dt>
+				<dd>Internet Message Access Protocol</dd>
+			</div>
+			<div><dt>IoT</dt>
+				<dd>Internet of Things</dd>
+			</div>
+			<div><dt>IP</dt>
+				<dd>Internet Protocol</dd>
+			</div>
+			<div><dt>IPS</dt>
+				<dd>Intrusion Prevention System</dd>
+			</div>
+			<div><dt>ISDN</dt>
+				<dd>Integrated Services Digital Network</dd>
+			</div>
+			<div><dt>ISO</dt>
+				<dd>International Organization for Standardization</dd>
+			</div>
+			<div><dt>ISP</dt>
+				<dd>Internet Service Provider</dd>
+			</div>
+			<div><dt>ITIL</dt>
+				<dd>Information Technology Infrastructure Library</dd>
+			</div>
+			<div><dt>ITSM</dt>
+				<dd>IT Service Management</dd>
+			</div>
+			<div><dt>JS</dt>
+				<dd>JavaScript</dd>
+			</div>
+			<div><dt>JSON</dt>
+				<dd>JavaScript Object Notation</dd>
+			</div>
+			<div><dt>KB</dt>
+				<dd>Knowledge Base</dd>
+			</div>
+			<div><dt>KBPS</dt>
+				<dd>Kilobit Per Second</dd>
+			</div>
+			<div><dt>KVM</dt>
+				<dd>Keyboard, Video, Mouse (switch)</dd>
+			</div>
+			<div><dt>LAN</dt>
+				<dd>Local Area Network</dd>
+			</div>
+			<div><dt>LDAP</dt>
+				<dd>Lightweight Directory Access Protocol</dd>
+			</div>
+			<div><dt>MAC</dt>
+				<dd>Media Access Control</dd>
+			</div>
+			<div><dt>MAM</dt>
+				<dd>Media Access Management</dd>
+			</div>
+			<div><dt>MAN</dt>
+				<dd>Metropolitan Area Network</dd>
+			</div>
+			<div><dt>MBPS</dt>
+				<dd>Megabits Per Second</dd>
+			</div>
+			<div><dt>MCSA</dt>
+				<dd>Microsoft Certified Solutions Associate</dd>
+			</div>
+			<div><dt>MCSE</dt>
+				<dd>Microsoft Certified Solutions Expert</dd>
+			</div>
+			<div><dt>MDF</dt>
+				<dd>Main Distribution Frame</dd>
+			</div>
+			<div><dt>MDM</dt>
+				<dd>Mobile Device Management</dd>
+			</div>
+			<div><dt>MFA</dt>
+				<dd>Multi-Factor Authentication</dd>
+			</div>
+			<div><dt>MII</dt>
+				<dd>Media Independent Interface</dd>
+			</div>
+			<div><dt>ML</dt>
+				<dd>Machine Learning</dd>
+			</div>
+			<div><dt>MSI</dt>
+				<dd>Microsoft Installer</dd>
+			</div>
+			<div><dt>MTBF</dt>
+				<dd>Mean Time Between Failures</dd>
+			</div>
+			<div><dt>MTU</dt>
+				<dd>Maximum Transmission Unit</dd>
+			</div>
+			<div><dt>MTTR</dt>
+				<dd>Mean Time to Repair/Recovery</dd>
+			</div>
+			<div><dt>NAC</dt>
+				<dd>Network Access Control</dd>
+			</div>
+			<div><dt>NAS</dt>
+				<dd>Network-Attached Storage</dd>
+			</div>
+			<div><dt>NAT</dt>
+				<dd>Network Address Translation</dd>
+			</div>
+			<div><dt>Net+</dt>
+				<dd>CompTIA Network+</dd>
+			</div>
+			<div><dt>NFC</dt>
+				<dd>Near Field Communication</dd>
+			</div>
+			<div><dt>NIC</dt>
+				<dd>Network Interface Card</dd>
+			</div>
+			<div><dt>NoSQL</dt>
+				<dd>Not Only SQL</dd>
+			</div>
+			<div><dt>NTP</dt>
+				<dd>Network Time Protocol</dd>
+			</div>
+			<div><dt>NVMe</dt>
+				<dd>Non-Volatile Memory Express</dd>
+			</div>
+			<div><dt>NVRAM</dt>
+				<dd>Non-volatile RAM</dd>
+			</div>
+			<div><dt>OEM</dt>
+				<dd>Original Equipment Manufacturer</dd>
+			</div>
+			<div><dt>OOP</dt>
+				<dd>Object-Oriented Programming</dd>
+			</div>
+			<div><dt>OS</dt>
+				<dd>Operating System</dd>
+			</div>
+			<div><dt>OSPF</dt>
+				<dd>Open Shortest Path First</dd>
+			</div>
+			<div><dt>OU</dt>
+				<dd>Organizational Unit</dd>
+			</div>
+			<div><dt>P2V</dt>
+				<dd>Physical to Virtual</dd>
+			</div>
+			<div><dt>PaaS</dt>
+				<dd>Platform as a Service</dd>
+			</div>
+			<div><dt>PAP</dt>
+				<dd>Password Authentication Protocol</dd>
+			</div>
+			<div><dt>PC</dt>
+				<dd>Personal computer (host)</dd>
+			</div>
+			<div><dt>PCI DSS</dt>
+				<dd>Payment Card Industry Data Security Standard</dd>
+			</div>
+			<div><dt>PCIe</dt>
+				<dd>Peripheral Component Interconnect Express</dd>
+			</div>
+			<div><dt>PIM</dt>
+				<dd>Personal Information Manager</dd>
+			</div>
+			<div><dt>PKI</dt>
+				<dd>Public Key Infrastructure</dd>
+			</div>
+			<div><dt>PoE</dt>
+				<dd>Power over Ethernet</dd>
+			</div>
+			<div><dt>POP</dt>
+				<dd>Point of presence</dd>
+			</div>
+			<div><dt>POP3</dt>
+				<dd>Post Office Protocol 3</dd>
+			</div>
+			<div><dt>POST</dt>
+				<dd>Power-On Self-Test</dd>
+			</div>
+			<div><dt>POTS</dt>
+				<dd>Plain Old Telephone Service</dd>
+			</div>
+			<div><dt>PSTN</dt>
+				<dd>Public Switched Telephone Network</dd>
+			</div>
+			<div><dt>PSU</dt>
+				<dd>Power Supply Unit</dd>
+			</div>
+			<div><dt>PXE</dt>
+				<dd>Preboot Execution Environment</dd>
+			</div>
+			<div><dt>QoS</dt>
+				<dd>Quality of Service</dd>
+			</div>
+			<div><dt>RAID</dt>
+				<dd>Redundant Array of Independent Disks</dd>
+			</div>
+			<div><dt>RAM</dt>
+				<dd>Random Access Memory</dd>
+			</div>
+			<div><dt>RDP</dt>
+				<dd>Remote Desktop Protocol</dd>
+			</div>
+			<div><dt>REST</dt>
+				<dd>Representational State Transfer</dd>
+			</div>
+			<div><dt>RFC</dt>
+				<dd>Request for Change</dd>
+			</div>
+			<div><dt>RFID</dt>
+				<dd>Radio-Frequency Identification</dd>
+			</div>
+			<div><dt>RIMM</dt>
+				<dd>Rambus In-line Memory Module</dd>
+			</div>
+			<div><dt>RMM</dt>
+				<dd>Remote Monitoring and Management</dd>
+			</div>
+			<div><dt>ROM</dt>
+				<dd>Read-Only Memory</dd>
+			</div>
+			<div><dt>RPO</dt>
+				<dd>Recovery Point Objective</dd>
+			</div>
+			<div><dt>RTO</dt>
+				<dd>Recovery Time Objective</dd>
+			</div>
+			<div><dt>RTP</dt>
+				<dd>Real-time Transport Protocol</dd>
+			</div>
+			<div><dt>SaaS</dt>
+				<dd>Software as a Service</dd>
+			</div>
+			<div><dt>SAN</dt>
+				<dd>Storage Area Network</dd>
+			</div>
+			<div><dt>SATA</dt>
+				<dd>Serial Advanced Technology Attachment</dd>
+			</div>
+			<div><dt>SCCM</dt>
+				<dd>System Center Configuration Manager</dd>
+			</div>
+			<div><dt>SCSI</dt>
+				<dd>Small Computer System Interface</dd>
+			</div>
+			<div><dt>SDK</dt>
+				<dd>Software Development Kit</dd>
+			</div>
+			<div><dt>Sec+</dt>
+				<dd>CompTIA Security+</dd>
+			</div>
+			<div><dt>SIEM</dt>
+				<dd>Security Information and Event Management</dd>
+			</div>
+			<div><dt>SIMM</dt>
+				<dd>Single In-line Memory Module</dd>
+			</div>
+			<div><dt>SLA</dt>
+				<dd>Service Level Agreement</dd>
+			</div>
+			<div><dt>SMB</dt>
+				<dd>Server Message Block</dd>
+			</div>
+			<div><dt>SMTP</dt>
+				<dd>Simple Mail Transfer Protocol</dd>
+			</div>
+			<div><dt>SNMP</dt>
+				<dd>Simple Network Management Protocol</dd>
+			</div>
+			<div><dt>SOC</dt>
+				<dd>Security Operations Center</dd>
+			</div>
+			<div><dt>SOF</dt>
+				<dd>Start Of Frame</dd>
+			</div>
+			<div><dt>SOP</dt>
+				<dd>Standard Operating Procedure</dd>
+			</div>
+			<div><dt>SOX</dt>
+				<dd>Sarbanes-Oxley Act</dd>
+			</div>
+			<div><dt>SQL</dt>
+				<dd>Structured Query Language</dd>
+			</div>
+			<div><dt>SRAM</dt>
+				<dd>Static Random Access Memory</dd>
+			</div>
+			<div><dt>SSD</dt>
+				<dd>Solid State Drive</dd>
+			</div>
+			<div><dt>SSH</dt>
+				<dd>Secure Shell</dd>
+			</div>
+			<div><dt>SSID</dt>
+				<dd>Service Set Identifier (Wi-Fi)</dd>
+			</div>
+			<div><dt>SSL/TLS</dt>
+				<dd>Secure Sockets Layer / Transport Layer Security</dd>
+			</div>
+			<div><dt>TCP</dt>
+				<dd>Transmission Control Protocol</dd>
+			</div>
+			<div><dt>TFTP</dt>
+				<dd>Trivial File Transfer Protocol</dd>
+			</div>
+			<div><dt>UDP</dt>
+				<dd>User Datagram Protocol</dd>
+			</div>
+			<div><dt>UEFI</dt>
+				<dd>Unified Extensible Firmware Interface</dd>
+			</div>
+			<div><dt>UPS</dt>
+				<dd>Uninterruptible Power Supply</dd>
+			</div>
+			<div><dt>URL</dt>
+				<dd>Uniform Resource Locator</dd>
+			</div>
+			<div><dt>USB</dt>
+				<dd>Universal Serial Bus</dd>
+			</div>
+			<div><dt>V2V</dt>
+				<dd>Virtual to Virtual</dd>
+			</div>
+			<div><dt>VLAN</dt>
+				<dd>Virtual LAN</dd>
+			</div>
+			<div><dt>VM</dt>
+				<dd>Virtual Machine</dd>
+			</div>
+			<div><dt>VoIP</dt>
+				<dd>Voice over IP</dd>
+			</div>
+			<div><dt>VPN</dt>
+				<dd>Virtual Private Network</dd>
+			</div>
+			<div><dt>WAN</dt>
+				<dd>Wide Area Network</dd>
+			</div>
+			<div><dt>WAP</dt>
+				<dd>Wireless Access Point</dd>
+			</div>
+			<div><dt>WDS</dt>
+				<dd>Windows Deployment Services</dd>
+			</div>
+			<div><dt>WLAN</dt>
+				<dd>Wireless LAN</dd>
+			</div>
+			<div><dt>WMI</dt>
+				<dd>Windows Management Instrumentation</dd>
+			</div>
+			<div><dt>WPA</dt>
+				<dd>Wi-Fi Protected Access</dd>
+			</div>
+			<div><dt>WSUS</dt>
+				<dd>Windows Server Update Services</dd>
+			</div>
+			<div><dt>XML</dt>
+				<dd>Extensible Markup Language</dd>
+			</div>
+			<hr>
+			<h2>Full list</h2>
+			<div><dt>1GL</dt>
+				<dd>first-generation programming language</dd>
+			</div>
+			<div><dt>1NF</dt>
+				<dd>first normal form</dd>
+			</div>
+			<div><dt>10B2</dt>
+				<dd>10BASE-2</dd>
+			</div>
+			<div><dt>10B5</dt>
+				<dd>10BASE-5</dd>
+			</div>
+			<div><dt>10B-F</dt>
+				<dd>10BASE-F</dd>
+			</div>
+			<div><dt>10B-FB</dt>
+				<dd>10BASE-FB</dd>
+			</div>
+			<div><dt>10B-FL</dt>
+				<dd>10BASE-FL</dd>
+			</div>
+			<div><dt>10B-FP</dt>
+				<dd>10BASE-FP</dd>
+			</div>
+			<div><dt>10B-T</dt>
+				<dd>10BASE-T</dd>
+			</div>
+			<div><dt>100B-FX</dt>
+				<dd>100BASE-FX</dd>
+			</div>
+			<div><dt>100B-TX</dt>
+				<dd>100BASE-TX</dd>
+			</div>
+			<div><dt>100BVG</dt>
+				<dd>100BASE-VG</dd>
+			</div>
+			<div><dt>286</dt>
+				<dd>Intel 80286 processor</dd>
+			</div>
+			<div><dt>2B1Q</dt>
+				<dd>2 binary 1 quaternary</dd>
+			</div>
+			<div><dt>2FA</dt>
+				<dd>Two-factor authentication</dd>
+			</div>
+			<div><dt>2GL</dt>
+				<dd>second-generation programming language</dd>
+			</div>
+			<div><dt>2NF</dt>
+				<dd>second normal form</dd>
+			</div>
+			<div><dt>3GL</dt>
+				<dd>third-generation programming language</dd>
+			</div>
+			<div><dt>3GPP</dt>
+				<dd>3rd Generation Partnership Project – 3G comms</dd>
+			</div>
+			<div><dt>3GPP2</dt>
+				<dd>3rd Generation Partnership Project 2</dd>
+			</div>
+			<div><dt>3NF</dt>
+				<dd>third normal form</dd>
+			</div>
+			<div><dt>386</dt>
+				<dd>Intel 80386 processor</dd>
+			</div>
+			<div><dt>486</dt>
+				<dd>Intel 80486 processor</dd>
+			</div>
+			<div><dt>4B5BLF</dt>
+				<dd>4-bit 5-bit local fiber</dd>
+			</div>
+			<div><dt>4GL</dt>
+				<dd>fourth-generation programming language</dd>
+			</div>
+			<div><dt>4NF</dt>
+				<dd>fourth normal form</dd>
+			</div>
+			<div><dt>5GL</dt>
+				<dd>fifth-generation programming language</dd>
+			</div>
+			<div><dt>5NF</dt>
+				<dd>fifth normal form</dd>
+			</div>
+			<div><dt>6NF</dt>
+				<dd>sixth normal form</dd>
+			</div>
+			<div><dt>8B10BLF</dt>
+				<dd>8-bit 10-bit local fiber</dd>
+			</div>
+			<div><dt>802.11</dt>
+				<dd>wireless LAN</dd>
+			</div>
+			<div><dt>A11Y</dt>
+				<dd>Accessibility</dd>
+			</div>
+			<div><dt>AAA</dt>
+				<dd>Authentication Authorization, Accounting</dd>
+			</div>
+			<div><dt>AABB</dt>
+				<dd>Axis Aligned Bounding Box</dd>
+			</div>
+			<div><dt>AAC</dt>
+				<dd>Advanced Audio Coding</dd>
+			</div>
+			<div><dt>AAL</dt>
+				<dd>ATM Adaptation Layer</dd>
+			</div>
+			<div><dt>AALC</dt>
+				<dd>ATM Adaptation Layer Connection</dd>
+			</div>
+			<div><dt>AARP</dt>
+				<dd>AppleTalk Address Resolution Protocol</dd>
+			</div>
+			<div><dt>ABAC</dt>
+				<dd>Attribute-Based Access Control</dd>
+			</div>
+			<div><dt>ABCL</dt>
+				<dd>Actor-Based Concurrent Language</dd>
+			</div>
+			<div><dt>ABI</dt>
+				<dd>Application Binary Interface</dd>
+			</div>
+			<div><dt>ABM</dt>
+				<dd>Asynchronous Balanced Mode</dd>
+			</div>
+			<div><dt>ABR</dt>
+				<dd>Area Border Router</dd>
+			</div>
+			<div><dt>ABR</dt>
+				<dd>Auto Baud-Rate detection</dd>
+			</div>
+			<div><dt>ABR</dt>
+				<dd>Available Bitrate</dd>
+			</div>
+			<div><dt>ABR</dt>
+				<dd>Average Bitrate</dd>
+			</div>
+			<div><dt>ABR</dt>
+				<dd>Adaptive Bitrate (Streaming)</dd>
+			</div>
+			<div><dt>AC</dt>
+				<dd>Acoustic Coupler</dd>
+			</div>
+			<div><dt>AC</dt>
+				<dd>Alternating Current</dd>
+			</div>
+			<div><dt>ACD</dt>
+				<dd>Automatic Call Distributor</dd>
+			</div>
+			<div><dt>ACE</dt>
+				<dd>Advanced Computing Environment</dd>
+			</div>
+			<div><dt>ACID</dt>
+				<dd>Atomicity Consistency Isolation Durability</dd>
+			</div>
+			<div><dt>ACK</dt>
+				<dd>ACKnowledgement</dd>
+			</div>
+			<div><dt>ACK</dt>
+				<dd>Amsterdam Compiler Kit</dd>
+			</div>
+			<div><dt>ACL</dt>
+				<dd>Access Control List</dd>
+			</div>
+			<div><dt>ACL</dt>
+				<dd>Active Current Loop</dd>
+			</div>
+			<div><dt>ACM</dt>
+				<dd>Association for Computing Machinery</dd>
+			</div>
+			<div><dt>ACME</dt>
+				<dd>Automated Classification of Medical Entities</dd>
+			</div>
+			<div><dt>ACP</dt>
+				<dd>Airline Control Program</dd>
+			</div>
+			<div><dt>ACPI</dt>
+				<dd>Advanced Configuration and Power Interface</dd>
+			</div>
+			<div><dt>ACR</dt>
+				<dd>Allowed Cell Rate</dd>
+			</div>
+			<div><dt>ACR</dt>
+				<dd>Attenuation to Crosstalk Ratio</dd>
+			</div>
+			<div><dt>AD</dt>
+				<dd>Active Directory</dd>
+			</div>
+			<div><dt>AD</dt>
+				<dd>Administrative Domain</dd>
+			</div>
+			<div><dt>ADC</dt>
+				<dd>Analog-to-Digital Converter</dd>
+			</div>
+			<div><dt>ADC</dt>
+				<dd>Apple Display Connector</dd>
+			</div>
+			<div><dt>ADB</dt>
+				<dd>Apple Desktop Bus</dd>
+			</div>
+			<div><dt>ADCCP</dt>
+				<dd>Advanced Data Communications Control Procedures</dd>
+			</div>
+			<div><dt>ADO</dt>
+				<dd>ActiveX Data Objects</dd>
+			</div>
+			<div><dt>ADSL</dt>
+				<dd>Asymmetric Digital Subscriber Line</dd>
+			</div>
+			<div><dt>ADT</dt>
+				<dd>Abstract Data Type</dd>
+			</div>
+			<div><dt>AE</dt>
+				<dd>Adaptive Equalizer</dd>
+			</div>
+			<div><dt>AES</dt>
+				<dd>Advanced Encryption Standard</dd>
+			</div>
+			<div><dt>AF</dt>
+				<dd>Anisotropic Filtering</dd>
+			</div>
+			<div><dt>AFP</dt>
+				<dd>Apple Filing Protocol</dd>
+			</div>
+			<div><dt>AGI</dt>
+				<dd>Artificial General Intelligence</dd>
+			</div>
+			<div><dt>AGP</dt>
+				<dd>Accelerated Graphics Port</dd>
+			</div>
+			<div><dt>AH</dt>
+				<dd>Active Hub</dd>
+			</div>
+			<div><dt>AI</dt>
+				<dd>Artificial Intelligence</dd>
+			</div>
+			<div><dt>AIX</dt>
+				<dd>Advanced Interactive eXecutive</dd>
+			</div>
+			<div><dt>Ajax</dt>
+				<dd>Asynchronous JavaScript and XML</dd>
+			</div>
+			<div><dt>AL</dt>
+				<dd>Active Link</dd>
+			</div>
+			<div><dt>AL</dt>
+				<dd>Access List</dd>
+			</div>
+			<div><dt>ALAC</dt>
+				<dd>Apple Lossless Audio Codec</dd>
+			</div>
+			<div><dt>ALGOL</dt>
+				<dd>Algorithmic Language</dd>
+			</div>
+			<div><dt>ALSA</dt>
+				<dd>Advanced Linux Sound Architecture</dd>
+			</div>
+			<div><dt>ALU</dt>
+				<dd>Arithmetic and Logical Unit</dd>
+			</div>
+			<div><dt>AM</dt>
+				<dd>Access Method</dd>
+			</div>
+			<div><dt>AM</dt>
+				<dd>Active Matrix</dd>
+			</div>
+			<div><dt>AMOLED</dt>
+				<dd>Active-Matrix Organic Light-Emitting Diode</dd>
+			</div>
+			<div><dt>AM</dt>
+				<dd>Active Monitor</dd>
+			</div>
+			<div><dt>AM</dt>
+				<dd>Allied Mastercomputer</dd>
+			</div>
+			<div><dt>AM</dt>
+				<dd>Amplitude Modulation</dd>
+			</div>
+			<div><dt>AMD</dt>
+				<dd>Advanced Micro Devices</dd>
+			</div>
+			<div><dt>AMQP</dt>
+				<dd>Advanced Message Queuing Protocol</dd>
+			</div>
+			<div><dt>AMR</dt>
+				<dd>Audio Modem Riser</dd>
+			</div>
+			<div><dt>ANN</dt>
+				<dd>Artificial Neural Network</dd>
+			</div>
+			<div><dt>ANSI</dt>
+				<dd>American National Standards Institute</dd>
+			</div>
+			<div><dt>ANT</dt>
+				<dd>Another Neat Tool</dd>
+			</div>
+			<div><dt>AoE</dt>
+				<dd>ATA over Ethernet</dd>
+			</div>
+			<div><dt>AOP</dt>
+				<dd>Aspect-Oriented Programming</dd>
+			</div>
+			<div><dt>AOT</dt>
+				<dd>Ahead-Of-Time</dd>
+			</div>
+			<div><dt>APCI</dt>
+				<dd>Application-Layer Protocol Control Information</dd>
+			</div>
+			<div><dt>API</dt>
+				<dd>Application Programming Interface</dd>
+			</div>
+			<div><dt>APIC</dt>
+				<dd>Advanced Programmable Interrupt Controller</dd>
+			</div>
+			<div><dt>APIPA</dt>
+				<dd>Automatic Private IP Addressing</dd>
+			</div>
+			<div><dt>APL</dt>
+				<dd>A Programming Language</dd>
+			</div>
+			<div><dt>APR</dt>
+				<dd>Apache Portable Runtime</dd>
+			</div>
+			<div><dt>ARC</dt>
+				<dd>Adaptive Replacement Cache</dd>
+			</div>
+			<div><dt>ARC</dt>
+				<dd>Advanced RISC Computing</dd>
+			</div>
+			<div><dt>ARIN</dt>
+				<dd>American Registry for Internet Numbers</dd>
+			</div>
+			<div><dt>ARM</dt>
+				<dd>Advanced RISC Machines</dd>
+			</div>
+			<div><dt>AROS</dt>
+				<dd>AROS Research Operating System</dd>
+			</div>
+			<div><dt>ARP</dt>
+				<dd>Address Resolution Protocol</dd>
+			</div>
+			<div><dt>ARPA</dt>
+				<dd>Address and Routing Parameter Area</dd>
+			</div>
+			<div><dt>ARPA</dt>
+				<dd>Advanced Research Projects Agency</dd>
+			</div>
+			<div><dt>ARPANET</dt>
+				<dd>Advanced Research Projects Agency Network</dd>
+			</div>
+			<div><dt>AS</dt>
+				<dd>Access Server</dd>
+			</div>
+			<div><dt>ASCII</dt>
+				<dd>American Standard Code for Information Interchange</dd>
+			</div>
+			<div><dt>AuthIP</dt>
+				<dd>Authenticated Internet Protocol</dd>
+			</div>
+			<div><dt>ASG</dt>
+				<dd>Abstract Semantic Graph</dd>
+			</div>
+			<div><dt>ASIC</dt>
+				<dd>Application-Specific Integrated Circuit</dd>
+			</div>
+			<div><dt>ASIMO</dt>
+				<dd>Advanced Step in Innovative Mobility</dd>
+			</div>
+			<div><dt>ASLR</dt>
+				<dd>Address Space Layout Randomization</dd>
+			</div>
+			<div><dt>ASM</dt>
+				<dd>Algorithmic State Machine</dd>
+			</div>
+			<div><dt>ASMP</dt>
+				<dd>Asymmetric Multiprocessing</dd>
+			</div>
+			<div><dt>ASN.1</dt>
+				<dd>Abstract Syntax Notation 1</dd>
+			</div>
+			<div><dt>ASP</dt>
+				<dd>Active Server Pages</dd>
+			</div>
+			<div><dt>ASP</dt>
+				<dd>Application Service Provider</dd>
+			</div>
+			<div><dt>ASR</dt>
+				<dd>Asynchronous Signal Routine</dd>
+			</div>
+			<div><dt>AST</dt>
+				<dd>Abstract Syntax Tree</dd>
+			</div>
+			<div><dt>AT</dt>
+				<dd>Advanced Technology</dd>
+			</div>
+			<div><dt>AT</dt>
+				<dd>Access Time</dd>
+			</div>
+			<div><dt>AT</dt>
+				<dd>Active Terminator</dd>
+			</div>
+			<div><dt>ATA</dt>
+				<dd>Advanced Technology Attachment</dd>
+			</div>
+			<div><dt>ATAG</dt>
+				<dd>Authoring Tool Accessibility Guidelines</dd>
+			</div>
+			<div><dt>ATAPI</dt>
+				<dd>Advanced Technology Attachment Packet Interface</dd>
+			</div>
+			<div><dt>ATM</dt>
+				<dd>Asynchronous Transfer Mode</dd>
+			</div>
+			<div><dt>AuthN</dt>
+				<dd>Authentication</dd>
+			</div>
+			<div><dt>AuthZ</dt>
+				<dd>Authorization</dd>
+			</div>
+			<div><dt>AV</dt>
+				<dd>Antivirus</dd>
+			</div>
+			<div><dt>AVC</dt>
+				<dd>Advanced Video Coding</dd>
+			</div>
+			<div><dt>AVI</dt>
+				<dd>Audio Video Interleaved</dd>
+			</div>
+			<div><dt>AWK</dt>
+				<dd>Aho Weinberger Kernighan</dd>
+			</div>
+			<div><dt>AWS</dt>
+				<dd>Amazon Web Services</dd>
+			</div>
+			<div><dt>AWT</dt>
+				<dd>Abstract Window Toolkit</dd>
+			</div>
+			<div><dt>B2B</dt>
+				<dd>Business-to-Business</dd>
+			</div>
+			<div><dt>B2C</dt>
+				<dd>Business-to-Consumer</dd>
+			</div>
+			<div><dt>B2E</dt>
+				<dd>Business-to-Employee</dd>
+			</div>
+			<div><dt>BAL</dt>
+				<dd>Basic Assembly Language</dd>
+			</div>
+			<div><dt>BAM</dt>
+				<dd>Block Availability Map</dd>
+			</div>
+			<div><dt>Bash</dt>
+				<dd>Bourne-again shell</dd>
+			</div>
+			<div><dt>BASIC</dt>
+				<dd>Beginner's All-Purpose Symbolic Instruction Code</dd>
+			</div>
+			<div><dt>BBP</dt>
+				<dd>Baseband Processor</dd>
+			</div>
+			<div><dt>BBS</dt>
+				<dd>Bulletin Board System</dd>
+			</div>
+			<div><dt>BC</dt>
+				<dd>Business Continuity</dd>
+			</div>
+			<div><dt>BCC</dt>
+				<dd>Blind Carbon Copy</dd>
+			</div>
+			<div><dt>BCD</dt>
+				<dd>Binary Coded Decimal</dd>
+			</div>
+			<div><dt>BCD</dt>
+				<dd>Boot Configuration Data</dd>
+			</div>
+			<div><dt>BCNF</dt>
+				<dd>Boyce–Codd normal form</dd>
+			</div>
+			<div><dt>BCP</dt>
+				<dd>Business Continuity Planning</dd>
+			</div>
+			<div><dt>BCP</dt>
+				<dd>Best Current Practice</dd>
+			</div>
+			<div><dt>BE</dt>
+				<dd>Backend</dd>
+			</div>
+			<div><dt>BEEP</dt>
+				<dd>Blocks Extensible Exchange Protocol</dd>
+			</div>
+			<div><dt>BER</dt>
+				<dd>Bit Error Rate</dd>
+			</div>
+			<div><dt>BFD</dt>
+				<dd>Bidirectional Forwarding Detection</dd>
+			</div>
+			<div><dt>BFD</dt>
+				<dd>Binary File Descriptor</dd>
+			</div>
+			<div><dt>BFS</dt>
+				<dd>Breadth-First Search</dd>
+			</div>
+			<div><dt>BFT</dt>
+				<dd>Byzantine Fault Tolerant</dd>
+			</div>
+			<div><dt>BGP</dt>
+				<dd>Border Gateway Protocol</dd>
+			</div>
+			<div><dt>BI</dt>
+				<dd>Business Intelligence</dd>
+			</div>
+			<div><dt>BiDi</dt>
+				<dd>Bi-Directional</dd>
+			</div>
+			<div><dt>bin</dt>
+				<dd>binary</dd>
+			</div>
+			<div><dt>BINAC</dt>
+				<dd>Binary Automatic Computer</dd>
+			</div>
+			<div><dt>BIND</dt>
+				<dd>Berkeley Internet Name Domain</dd>
+			</div>
+			<div><dt>BIOS</dt>
+				<dd>Basic Input Output System</dd>
+			</div>
+			<div><dt>BJT</dt>
+				<dd>Bipolar Junction Transistor</dd>
+			</div>
+			<div><dt>bit</dt>
+				<dd>binary digit</dd>
+			</div>
+			<div><dt>Blob</dt>
+				<dd>Binary large object</dd>
+			</div>
+			<div><dt>Blog</dt>
+				<dd>Web Log</dd>
+			</div>
+			<div><dt>BMP</dt>
+				<dd>Basic Multilingual Plane</dd>
+			</div>
+			<div><dt>BNC</dt>
+				<dd>Baby Neill Constant</dd>
+			</div>
+			<div><dt>BOINC</dt>
+				<dd>Berkeley Open Infrastructure for Network Computing</dd>
+			</div>
+			<div><dt>BOM</dt>
+				<dd>Byte Order Mark</dd>
+			</div>
+			<div><dt>BOOTP</dt>
+				<dd>Bootstrap Protocol</dd>
+			</div>
+			<div><dt>BPDU</dt>
+				<dd>Bridge Protocol Data Unit</dd>
+			</div>
+			<div><dt>BPEL</dt>
+				<dd>Business Process Execution Language</dd>
+			</div>
+			<div><dt>BPL</dt>
+				<dd>Broadband over Power Lines</dd>
+			</div>
+			<div><dt>BPM</dt>
+				<dd>Business Process Management</dd>
+			</div>
+			<div><dt>BPM</dt>
+				<dd>Business Process Modeling</dd>
+			</div>
+			<div><dt>bps</dt>
+				<dd>bits per second</dd>
+			</div>
+			<div><dt>BRM</dt>
+				<dd>Business Reference Model</dd>
+			</div>
+			<div><dt>BRMS</dt>
+				<dd>Business Rule Management System</dd>
+			</div>
+			<div><dt>BRR</dt>
+				<dd>Business Readiness Rating</dd>
+			</div>
+			<div><dt>BRS</dt>
+				<dd>Broadband Radio Service</dd>
+			</div>
+			<div><dt>BSA</dt>
+				<dd>Business Software Alliance</dd>
+			</div>
+			<div><dt>BSB</dt>
+				<dd>Backside Bus</dd>
+			</div>
+			<div><dt>BSD</dt>
+				<dd>Berkeley Software Distribution</dd>
+			</div>
+			<div><dt>BSoD</dt>
+				<dd>Blue Screen of Death</dd>
+			</div>
+			<div><dt>BSS</dt>
+				<dd>Block Started by Symbol</dd>
+			</div>
+			<div><dt>BT</dt>
+				<dd>BitTorrent</dd>
+			</div>
+			<div><dt>BT</dt>
+				<dd>Bluetooth</dd>
+			</div>
+			<div><dt>B TAM</dt>
+				<dd>Basic Telecommunications Access Method</dd>
+			</div>
+			<div><dt>BW</dt>
+				<dd>Bandwidth</dd>
+			</div>
+			<div><dt>BYOD</dt>
+				<dd>Bring Your Own Device</dd>
+			</div>
+			<div><dt>Byte</dt>
+				<dd>By eight (group of 8 bits)</dd>
+			</div>
+			<div><dt>CA</dt>
+				<dd>Certificate authority</dd>
+			</div>
+			<div><dt>CAD</dt>
+				<dd>Computer-aided design</dd>
+			</div>
+			<div><dt>CAE</dt>
+				<dd>Computer-aided engineering</dd>
+			</div>
+			<div><dt>CAID</dt>
+				<dd>Computer-aided industrial design</dd>
+			</div>
+			<div><dt>CAI</dt>
+				<dd>Computer-aided instruction</dd>
+			</div>
+			<div><dt>CAM</dt>
+				<dd>Computer-aided manufacturing</dd>
+			</div>
+			<div><dt>CAP</dt>
+				<dd>Consistency availability partition tolerance (theorem)</dd>
+			</div>
+			<div><dt>CAPTCHA</dt>
+				<dd>Completely automated public Turing test to tell computers and humans apart</dd>
+			</div>
+			<div><dt>CAT</dt>
+				<dd>Computer-aided translation</dd>
+			</div>
+			<div><dt>CAQ</dt>
+				<dd>Computer-aided quality assurance</dd>
+			</div>
+			<div><dt>CASE</dt>
+				<dd>Computer-aided software engineering</dd>
+			</div>
+			<div><dt>cc</dt>
+				<dd>C compiler</dd>
+			</div>
+			<div><dt>CC</dt>
+				<dd>Carbon copy</dd>
+			</div>
+			<div><dt>CD</dt>
+				<dd>Compact Disc</dd>
+			</div>
+			<div><dt>CDE</dt>
+				<dd>Common Desktop Environment</dd>
+			</div>
+			<div><dt>CDMA</dt>
+				<dd>Code-division multiple access</dd>
+			</div>
+			<div><dt>CDN</dt>
+				<dd>Content delivery network</dd>
+			</div>
+			<div><dt>CDP</dt>
+				<dd>Cisco Discovery Protocol</dd>
+			</div>
+			<div><dt>CDP</dt>
+				<dd>Continuous data protection</dd>
+			</div>
+			<div><dt>CD-R</dt>
+				<dd>CD-Recordable</dd>
+			</div>
+			<div><dt>CD-ROM</dt>
+				<dd>CD Read-Only Memory</dd>
+			</div>
+			<div><dt>CD-RW</dt>
+				<dd>CD-Rewritable</dd>
+			</div>
+			<div><dt>CDSA</dt>
+				<dd>Common Data Security Architecture</dd>
+			</div>
+			<div><dt>CERT</dt>
+				<dd>Computer emergency response team</dd>
+			</div>
+			<div><dt>CES</dt>
+				<dd>Consumer Electronics Show</dd>
+			</div>
+			<div><dt>CF</dt>
+				<dd>Compact Flash</dd>
+			</div>
+			<div><dt>CFD</dt>
+				<dd>Computational fluid dynamics</dd>
+			</div>
+			<div><dt>CFG</dt>
+				<dd>Context-free grammar</dd>
+			</div>
+			<div><dt>CFG</dt>
+				<dd>Control-flow graph</dd>
+			</div>
+			<div><dt>CG</dt>
+				<dd>Computer graphics</dd>
+			</div>
+			<div><dt>CGA</dt>
+				<dd>Color graphics array</dd>
+			</div>
+			<div><dt>CGI</dt>
+				<dd>Common Gateway Interface</dd>
+			</div>
+			<div><dt>CGI</dt>
+				<dd>Computer-generated imagery</dd>
+			</div>
+			<div><dt>CGT</dt>
+				<dd>Computational Graph Theory</dd>
+			</div>
+			<div><dt>CHAP</dt>
+				<dd>Challenge–handshake authentication protocol</dd>
+			</div>
+			<div><dt>CHS</dt>
+				<dd>Cylinder–head–sector</dd>
+			</div>
+			<div><dt>CIDR</dt>
+				<dd>Classless inter-domain routing</dd>
+			</div>
+			<div><dt>CIFS</dt>
+				<dd>Common Internet Filesystem</dd>
+			</div>
+			<div><dt>CIM</dt>
+				<dd>Common Information Model</dd>
+			</div>
+			<div><dt>CIO</dt>
+				<dd>Chief information officer</dd>
+			</div>
+			<div><dt>CIR</dt>
+				<dd>Committed information rate</dd>
+			</div>
+			<div><dt>CISC</dt>
+				<dd>Complex-instruction-set computer</dd>
+			</div>
+			<div><dt>CIT</dt>
+				<dd>Computer information technology</dd>
+			</div>
+			<div><dt>CJK</dt>
+				<dd>Chinese, Japanese, and Korean</dd>
+			</div>
+			<div><dt>CJKV</dt>
+				<dd>Chinese, Japanese, Korean, and Vietnamese</dd>
+			</div>
+			<div><dt>CLI</dt>
+				<dd>Command line interface</dd>
+			</div>
+			<div><dt>CLR</dt>
+				<dd>Common Language Runtime</dd>
+			</div>
+			<div><dt>CM</dt>
+				<dd>Configuration management</dd>
+			</div>
+			<div><dt>CM</dt>
+				<dd>Content management</dd>
+			</div>
+			<div><dt>CMDB</dt>
+				<dd>Configuration management database</dd>
+			</div>
+			<div><dt>CMMI</dt>
+				<dd>Capability Maturity Model Integration</dd>
+			</div>
+			<div><dt>CMOS</dt>
+				<dd>Complementary metal–oxide–semiconductor</dd>
+			</div>
+			<div><dt>CMS</dt>
+				<dd>Content management system</dd>
+			</div>
+			<div><dt>CN</dt>
+				<dd>Canonical Name</dd>
+			</div>
+			<div><dt>CN</dt>
+				<dd>Common Name</dd>
+			</div>
+			<div><dt>CNC</dt>
+				<dd>Computerized numerical control</dd>
+			</div>
+			<div><dt>CNG</dt>
+				<dd>Cryptographic Next Generation</dd>
+			</div>
+			<div><dt>CNR</dt>
+				<dd>Communications and Networking Riser</dd>
+			</div>
+			<div><dt>COBOL</dt>
+				<dd>Common Business-Oriented Language</dd>
+			</div>
+			<div><dt>COM</dt>
+				<dd>Component Object Model or communication</dd>
+			</div>
+			<div><dt>CORBA</dt>
+				<dd>Common Object Request Broker Architecture</dd>
+			</div>
+			<div><dt>CORS</dt>
+				<dd>Cross-origin resource sharing</dd>
+			</div>
+			<div><dt>COTS</dt>
+				<dd>Commercial off-the-shelf</dd>
+			</div>
+			<div><dt>CPA</dt>
+				<dd>Cell processor architecture</dd>
+			</div>
+			<div><dt>CPAN</dt>
+				<dd>Comprehensive Perl Archive Network</dd>
+			</div>
+			<div><dt>CP/M</dt>
+				<dd>Control Program/Monitor</dd>
+			</div>
+			<div><dt>CPRI</dt>
+				<dd>Common Public Radio Interface</dd>
+			</div>
+			<div><dt>CPS</dt>
+				<dd>Characters per second</dd>
+			</div>
+			<div><dt>CPU</dt>
+				<dd>Central processing unit</dd>
+			</div>
+			<div><dt>CQS</dt>
+				<dd>Command–query separation</dd>
+			</div>
+			<div><dt>CQRS</dt>
+				<dd>Command Query Responsibility Segregation</dd>
+			</div>
+			<div><dt>CR</dt>
+				<dd>Carriage return</dd>
+			</div>
+			<div><dt>CRAN</dt>
+				<dd>Comprehensive R Archive Network</dd>
+			</div>
+			<div><dt>CRC</dt>
+				<dd>Cyclic redundancy check</dd>
+			</div>
+			<div><dt>CRLF</dt>
+				<dd>Carriage return line feed</dd>
+			</div>
+			<div><dt>CRM</dt>
+				<dd>Customer Relationship Management</dd>
+			</div>
+			<div><dt>CRS</dt>
+				<dd>Computer Reservations System</dd>
+			</div>
+			<div><dt>CRT</dt>
+				<dd>Cathode-ray tube</dd>
+			</div>
+			<div><dt>CRUD</dt>
+				<dd>Create, read, update and delete</dd>
+			</div>
+			<div><dt>CS</dt>
+				<dd>Cable Select</dd>
+			</div>
+			<div><dt>CS</dt>
+				<dd>Computer Science</dd>
+			</div>
+			<div><dt>CSE</dt>
+				<dd>Computer science and engineering</dd>
+			</div>
+			<div><dt>CSI</dt>
+				<dd>Common System Interface</dd>
+			</div>
+			<div><dt>CSM</dt>
+				<dd>Compatibility support module</dd>
+			</div>
+			<div><dt>CSMA/CD</dt>
+				<dd>Carrier-sense multiple access with collision detection</dd>
+			</div>
+			<div><dt>CSP</dt>
+				<dd>Cloud service provider</dd>
+			</div>
+			<div><dt>CSP</dt>
+				<dd>Communicating sequential processes</dd>
+			</div>
+			<div><dt>CSRF</dt>
+				<dd>Cross-site request forgery</dd>
+			</div>
+			<div><dt>CSS</dt>
+				<dd>Cascading style sheets</dd>
+			</div>
+			<div><dt>CSS</dt>
+				<dd>Content-scrambling system</dd>
+			</div>
+			<div><dt>CSS</dt>
+				<dd>Closed-source software</dd>
+			</div>
+			<div><dt>CSS</dt>
+				<dd>Cross-site scripting</dd>
+			</div>
+			<div><dt>CSV</dt>
+				<dd>Comma-separated values</dd>
+			</div>
+			<div><dt>CT</dt>
+				<dd>Computerized tomography</dd>
+			</div>
+			<div><dt>CTAN</dt>
+				<dd>Comprehensive TeX Archive Network</dd>
+			</div>
+			<div><dt>CTCP</dt>
+				<dd>Client-to-client protocol</dd>
+			</div>
+			<div><dt>CTI</dt>
+				<dd>Computer telephony integration</dd>
+			</div>
+			<div><dt>CTFE</dt>
+				<dd>Compile-time function execution</dd>
+			</div>
+			<div><dt>CTL</dt>
+				<dd>Computation tree logic</dd>
+			</div>
+			<div><dt>CTM</dt>
+				<dd>Close To Metal</dd>
+			</div>
+			<div><dt>CTS</dt>
+				<dd>Clear to send</dd>
+			</div>
+			<div><dt>CTSS</dt>
+				<dd>Compatible Time-Sharing System</dd>
+			</div>
+			<div><dt>CUA</dt>
+				<dd>Common User Access</dd>
+			</div>
+			<div><dt>CVE</dt>
+				<dd>Common Vulnerabilities and Exposures</dd>
+			</div>
+			<div><dt>CVS</dt>
+				<dd>Concurrent Versions System</dd>
+			</div>
+			<div><dt>CX</dt>
+				<dd>Customer experience</dd>
+			</div>
+			<div><dt>DAC</dt>
+				<dd>Digital-To-Analog Converter</dd>
+			</div>
+			<div><dt>DAC</dt>
+				<dd>Discretionary Access Control</dd>
+			</div>
+			<div><dt>DAL</dt>
+				<dd>Database Abstraction Layer</dd>
+			</div>
+			<div><dt>DAO</dt>
+				<dd>Data Access Object</dd>
+			</div>
+			<div><dt>DAO</dt>
+				<dd>Data Access Objects</dd>
+			</div>
+			<div><dt>DAO</dt>
+				<dd>Disk-At-Once</dd>
+			</div>
+			<div><dt>DAP</dt>
+				<dd>Directory Access Protocol</dd>
+			</div>
+			<div><dt>DARPA</dt>
+				<dd>Defense Advanced Research Projects Agency</dd>
+			</div>
+			<div><dt>DAS</dt>
+				<dd>Direct Attached Storage</dd>
+			</div>
+			<div><dt>DAT</dt>
+				<dd>Digital Audio Tape</dd>
+			</div>
+			<div><dt>DB</dt>
+				<dd>Database</dd>
+			</div>
+			<div><dt>DSKT</dt>
+				<dd>Desktop</dd>
+			</div>
+			<div><dt>DBA</dt>
+				<dd>Database Administrator</dd>
+			</div>
+			<div><dt>DBCS</dt>
+				<dd>Double Byte Character Set</dd>
+			</div>
+			<div><dt>DBMS</dt>
+				<dd>Database Management System</dd>
+			</div>
+			<div><dt>DCC</dt>
+				<dd>Direct Client-to-Client</dd>
+			</div>
+			<div><dt>DCCP</dt>
+				<dd>Datagram Congestion Control Protocol</dd>
+			</div>
+			<div><dt>DCCA</dt>
+				<dd>Debian Common Core Alliance</dd>
+			</div>
+			<div><dt>DCL</dt>
+				<dd>Data Control Language</dd>
+			</div>
+			<div><dt>DCS</dt>
+				<dd>Distributed Control System</dd>
+			</div>
+			<div><dt>DCMI</dt>
+				<dd>Dublin Core Metadata Initiative</dd>
+			</div>
+			<div><dt>DCOM</dt>
+				<dd>Distributed Component Object Model</dd>
+			</div>
+			<div><dt>DD</dt>
+				<dd>Double Density</dd>
+			</div>
+			<div><dt>DDE</dt>
+				<dd>Dynamic Data Exchange</dd>
+			</div>
+			<div><dt>DDL</dt>
+				<dd>Data Definition Language</dd>
+			</div>
+			<div><dt>DDoS</dt>
+				<dd>Distributed Denial of Service</dd>
+			</div>
+			<div><dt>DDR</dt>
+				<dd>Double Data Rate</dd>
+			</div>
+			<div><dt>DEC</dt>
+				<dd>Digital Equipment Corporation</dd>
+			</div>
+			<div><dt>DES</dt>
+				<dd>Data Encryption Standard</dd>
+			</div>
+			<div><dt>dev</dt>
+				<dd>development</dd>
+			</div>
+			<div><dt>DFA</dt>
+				<dd>Deterministic Finite Automaton</dd>
+			</div>
+			<div><dt>DFD</dt>
+				<dd>Data Flow Diagram</dd>
+			</div>
+			<div><dt>DFS</dt>
+				<dd>Depth-First Search</dd>
+			</div>
+			<div><dt>DFS</dt>
+				<dd>Distributed File System</dd>
+			</div>
+			<div><dt>DGD</dt>
+				<dd>Dworkin's Game Driver</dd>
+			</div>
+			<div><dt>DHCP</dt>
+				<dd>Dynamic Host Configuration Protocol</dd>
+			</div>
+			<div><dt>DHTML</dt>
+				<dd>Dynamic Hypertext Markup Language</dd>
+			</div>
+			<div><dt>DIF</dt>
+				<dd>Data Integrity Field</dd>
+			</div>
+			<div><dt>DIMM</dt>
+				<dd>Dual Inline Memory Module</dd>
+			</div>
+			<div><dt>DIN</dt>
+				<dd>Deutsches Institut für Normung</dd>
+			</div>
+			<div><dt>DIP</dt>
+				<dd>Dual In-line Package</dd>
+			</div>
+			<div><dt>DISM</dt>
+				<dd>Deployment Image and Service Management Tool</dd>
+			</div>
+			<div><dt>DIVX</dt>
+				<dd>Digital Video Express</dd>
+			</div>
+			<div><dt>DKIM</dt>
+				<dd>Domain Keys Identified Mail</dd>
+			</div>
+			<div><dt>DL</dt>
+				<dd>Download</dd>
+			</div>
+			<div><dt>DLL</dt>
+				<dd>Dynamic Link Library</dd>
+			</div>
+			<div><dt>DLNA</dt>
+				<dd>Digital Living Network Alliance</dd>
+			</div>
+			<div><dt>DMA</dt>
+				<dd>Direct Memory Access</dd>
+			</div>
+			<div><dt>DMCA</dt>
+				<dd>Digital Millennium Copyright Act</dd>
+			</div>
+			<div><dt>DMI</dt>
+				<dd>Direct Media Interface</dd>
+			</div>
+			<div><dt>DML</dt>
+				<dd>Data Manipulation Language</dd>
+			</div>
+			<div><dt>DML</dt>
+				<dd>Definitive Media Library</dd>
+			</div>
+			<div><dt>DMR</dt>
+				<dd>Dennis M. Ritchie</dd>
+			</div>
+			<div><dt>DMZ</dt>
+				<dd>Demilitarized Zone</dd>
+			</div>
+			<div><dt>DN</dt>
+				<dd>Distinguished Name</dd>
+			</div>
+			<div><dt>DND</dt>
+				<dd>Drag-and-Drop</dd>
+			</div>
+			<div><dt>DNS</dt>
+				<dd>Domain Name System</dd>
+			</div>
+			<div><dt>DOA</dt>
+				<dd>Dead on Arrival</dd>
+			</div>
+			<div><dt>DOCSIS</dt>
+				<dd>Data Over Cable Service Interface Specification</dd>
+			</div>
+			<div><dt>DOM</dt>
+				<dd>Document Object Model</dd>
+			</div>
+			<div><dt>DORA</dt>
+				<dd>Discover, Offer, Request, Acknowledge</dd>
+			</div>
+			<div><dt>DoS</dt>
+				<dd>Denial of Service</dd>
+			</div>
+			<div><dt>DOS</dt>
+				<dd>Disk Operating System</dd>
+			</div>
+			<div><dt>DP</dt>
+				<dd>Dot Pitch</dd>
+			</div>
+			<div><dt>DPC</dt>
+				<dd>Deferred Procedure Call</dd>
+			</div>
+			<div><dt>DPI</dt>
+				<dd>Deep packet inspection</dd>
+			</div>
+			<div><dt>DPI</dt>
+				<dd>Dots per inch</dd>
+			</div>
+			<div><dt>DPMI</dt>
+				<dd>DOS Protected Mode Interface</dd>
+			</div>
+			<div><dt>DPMS</dt>
+				<dd>Display Power Management Signaling</dd>
+			</div>
+			<div><dt>DR</dt>
+				<dd>Disaster Recovery</dd>
+			</div>
+			<div><dt>DRAM</dt>
+				<dd>Dynamic Random-Access Memory</dd>
+			</div>
+			<div><dt>DR-DOS</dt>
+				<dd>Digital Research – Disk Operating System</dd>
+			</div>
+			<div><dt>DRI</dt>
+				<dd>Direct Rendering Infrastructure</dd>
+			</div>
+			<div><dt>DRM</dt>
+				<dd>Digital rights management</dd>
+			</div>
+			<div><dt>DRM</dt>
+				<dd>Direct rendering manager</dd>
+			</div>
+			<div><dt>DSA</dt>
+				<dd>Digital Signature Algorithm</dd>
+			</div>
+			<div><dt>DSDL</dt>
+				<dd>Document Schema Definition Languages</dd>
+			</div>
+			<div><dt>DSDM</dt>
+				<dd>Dynamic Systems Development Method</dd>
+			</div>
+			<div><dt>DSL</dt>
+				<dd>Digital Subscriber Line</dd>
+			</div>
+			<div><dt>DSL</dt>
+				<dd>Domain-Specific Language</dd>
+			</div>
+			<div><dt>DSLAM</dt>
+				<dd>Digital Subscriber Line Access Multiplexer</dd>
+			</div>
+			<div><dt>DSN</dt>
+				<dd>Database Source Name</dd>
+			</div>
+			<div><dt>DSN</dt>
+				<dd>Data Set Name</dd>
+			</div>
+			<div><dt>DSP</dt>
+				<dd>Digital Signal Processor</dd>
+			</div>
+			<div><dt>DSSSL</dt>
+				<dd>Document Style Semantics and Specification Language</dd>
+			</div>
+			<div><dt>DTD</dt>
+				<dd>Document Type Definition</dd>
+			</div>
+			<div><dt>DTE</dt>
+				<dd>Data Terminal Equipment or data transfer rate</dd>
+			</div>
+			<div><dt>DTO</dt>
+				<dd>Data Transfer Object</dd>
+			</div>
+			<div><dt>DTP</dt>
+				<dd>Desktop Publishing</dd>
+			</div>
+			<div><dt>DTR</dt>
+				<dd>Data Terminal Ready or Data transfer rate</dd>
+			</div>
+			<div><dt>DVD</dt>
+				<dd>Digital Versatile Disc or Digital Video Disc</dd>
+			</div>
+			<div><dt>DVD-R</dt>
+				<dd>DVD-Recordable</dd>
+			</div>
+			<div><dt>DVD-ROM</dt>
+				<dd>DVD-Read-Only Memory</dd>
+			</div>
+			<div><dt>DVD-RW</dt>
+				<dd>DVD-Rewritable</dd>
+			</div>
+			<div><dt>DVI</dt>
+				<dd>Digital Visual Interface</dd>
+			</div>
+			<div><dt>DVR</dt>
+				<dd>Digital Video Recorder</dd>
+			</div>
+			<div><dt>DW</dt>
+				<dd>Data Warehouse</dd>
+			</div>
+			<div><dt>EAI</dt>
+				<dd>Enterprise Application Integration</dd>
+			</div>
+			<div><dt>EAP</dt>
+				<dd>Extensible Authentication Protocol</dd>
+			</div>
+			<div><dt>EAS</dt>
+				<dd>Exchange ActiveSync</dd>
+			</div>
+			<div><dt>EBCDIC</dt>
+				<dd>Extended Binary Coded Decimal Interchange Code</dd>
+			</div>
+			<div><dt>EBML</dt>
+				<dd>Extensible Binary Meta Language</dd>
+			</div>
+			<div><dt>ECC</dt>
+				<dd>Elliptic Curve Cryptography</dd>
+			</div>
+			<div><dt>ECMA</dt>
+				<dd>European Computer Manufacturers Association</dd>
+			</div>
+			<div><dt>ECN</dt>
+				<dd>Explicit Congestion Notification</dd>
+			</div>
+			<div><dt>ECOS</dt>
+				<dd>Embedded Configurable Operating System</dd>
+			</div>
+			<div><dt>ECRS</dt>
+				<dd>Expense and Cost Recovery System</dd>
+			</div>
+			<div><dt>ECS</dt>
+				<dd>Entity-Component-System</dd>
+			</div>
+			<div><dt>EDA</dt>
+				<dd>Electronic Design Automation</dd>
+			</div>
+			<div><dt>EDGE</dt>
+				<dd>Enhanced Data rates for GSM Evolution</dd>
+			</div>
+			<div><dt>EDI</dt>
+				<dd>Electronic Data Interchange</dd>
+			</div>
+			<div><dt>EDO</dt>
+				<dd>Extended Data Out</dd>
+			</div>
+			<div><dt>EDSAC</dt>
+				<dd>Electronic Delay Storage Automatic Calculator</dd>
+			</div>
+			<div><dt>EDVAC</dt>
+				<dd>Electronic Discrete Variable Automatic Computer</dd>
+			</div>
+			<div><dt>EEPROM</dt>
+				<dd>Electronically Erasable Programmable Read-Only Memory</dd>
+			</div>
+			<div><dt>EFF</dt>
+				<dd>Electronic Frontier Foundation</dd>
+			</div>
+			<div><dt>EFI</dt>
+				<dd>Extensible Firmware Interface</dd>
+			</div>
+			<div><dt>EFM</dt>
+				<dd>Eight-to-Fourteen Modulation</dd>
+			</div>
+			<div><dt>EFM</dt>
+				<dd>Ethernet in the First Mile</dd>
+			</div>
+			<div><dt>EFS</dt>
+				<dd>Encrypting File System</dd>
+			</div>
+			<div><dt>EGA</dt>
+				<dd>Enhanced Graphics Array</dd>
+			</div>
+			<div><dt>E-mail</dt>
+				<dd>Electronic mail</dd>
+			</div>
+			<div><dt>EGP</dt>
+				<dd>Exterior Gateway Protocol</dd>
+			</div>
+			<div><dt>eID</dt>
+				<dd>electronic ID card</dd>
+			</div>
+			<div><dt>EIDE</dt>
+				<dd>Enhanced IDE</dd>
+			</div>
+			<div><dt>EIGRP</dt>
+				<dd>Enhanced Interior Gateway Routing Protocol</dd>
+			</div>
+			<div><dt>EISA</dt>
+				<dd>Extended Industry Standard Architecture</dd>
+			</div>
+			<div><dt>ELF</dt>
+				<dd>Extremely Low Frequency</dd>
+			</div>
+			<div><dt>ELF</dt>
+				<dd>Executable and Linkable Format</dd>
+			</div>
+			<div><dt>ELM</dt>
+				<dd>ELectronic Mail</dd>
+			</div>
+			<div><dt>EMACS</dt>
+				<dd>Editor MACroS</dd>
+			</div>
+			<div><dt>EMS</dt>
+				<dd>Expanded Memory Specification</dd>
+			</div>
+			<div><dt>ENIAC</dt>
+				<dd>Electronic Numerical Integrator And Computer</dd>
+			</div>
+			<div><dt>EOF</dt>
+				<dd>End of File</dd>
+			</div>
+			<div><dt>EOL</dt>
+				<dd>End of Life</dd>
+			</div>
+			<div><dt>EOL</dt>
+				<dd>End of Line</dd>
+			</div>
+			<div><dt>EOM</dt>
+				<dd>End of Message</dd>
+			</div>
+			<div><dt>EOS</dt>
+				<dd>End of Support</dd>
+			</div>
+			<div><dt>EPIC</dt>
+				<dd>Explicitly Parallel Instruction Computing</dd>
+			</div>
+			<div><dt>EPROM</dt>
+				<dd>Erasable Programmable Read-Only Memory</dd>
+			</div>
+			<div><dt>ERD</dt>
+				<dd>Entity–Relationship Diagram</dd>
+			</div>
+			<div><dt>ERM</dt>
+				<dd>Entity–Relationship Model</dd>
+			</div>
+			<div><dt>ERP</dt>
+				<dd>Enterprise Resource Planning</dd>
+			</div>
+			<div><dt>eSATA</dt>
+				<dd>external SATA</dd>
+			</div>
+			<div><dt>ESB</dt>
+				<dd>Enterprise service bus</dd>
+			</div>
+			<div><dt>ESCON</dt>
+				<dd>Enterprise Systems Connection</dd>
+			</div>
+			<div><dt>ESD</dt>
+				<dd>Electrostatic Discharge</dd>
+			</div>
+			<div><dt>ESI</dt>
+				<dd>Electronically Stored Information</dd>
+			</div>
+			<div><dt>ESR</dt>
+				<dd>Eric Steven Raymond</dd>
+			</div>
+			<div><dt>ETL</dt>
+				<dd>Extract, Transform, Load</dd>
+			</div>
+			<div><dt>ETW</dt>
+				<dd>Event Tracing for Windows</dd>
+			</div>
+			<div><dt>EUC</dt>
+				<dd>Extended Unix Code</dd>
+			</div>
+			<div><dt>EULA</dt>
+				<dd>End User License Agreement</dd>
+			</div>
+			<div><dt>EWMH</dt>
+				<dd>Extended Window Manager Hints</dd>
+			</div>
+			<div><dt>EXT</dt>
+				<dd>EXTended file system</dd>
+			</div>
+			<div><dt>ETA</dt>
+				<dd>Estimated Time of Arrival</dd>
+			</div>
+			<div><dt>FAP</dt>
+				<dd>FORTRAN Assembly Program</dd>
+			</div>
+			<div><dt>FASM</dt>
+				<dd>Flat ASseMbler</dd>
+			</div>
+			<div><dt>FAT</dt>
+				<dd>File Allocation Table</dd>
+			</div>
+			<div><dt>FAQ</dt>
+				<dd>Frequently Asked Questions</dd>
+			</div>
+			<div><dt>FBDIMM</dt>
+				<dd>Fully Buffered Dual Inline Memory Module</dd>
+			</div>
+			<div><dt>FC-AL</dt>
+				<dd>Fibre Channel Arbitrated Loop</dd>
+			</div>
+			<div><dt>FCB</dt>
+				<dd>File Control Block</dd>
+			</div>
+			<div><dt>FCS</dt>
+				<dd>Frame Check Sequence</dd>
+			</div>
+			<div><dt>FDC</dt>
+				<dd>Floppy-Disk Controller</dd>
+			</div>
+			<div><dt>FDS</dt>
+				<dd>Fedora Directory Server</dd>
+			</div>
+			<div><dt>FDD</dt>
+				<dd>Frequency-Division Duplexing</dd>
+			</div>
+			<div><dt>FDD</dt>
+				<dd>Floppy Disk Drive</dd>
+			</div>
+			<div><dt>FDDI</dt>
+				<dd>Fiber Distributed Data Interface</dd>
+			</div>
+			<div><dt>FDM</dt>
+				<dd>Frequency-Division Multiplexing</dd>
+			</div>
+			<div><dt>FDMA</dt>
+				<dd>Frequency-Division Multiple Access</dd>
+			</div>
+			<div><dt>FE</dt>
+				<dd>Frontend</dd>
+			</div>
+			<div><dt>FEC</dt>
+				<dd>Forward Error Correction</dd>
+			</div>
+			<div><dt>FEMB</dt>
+				<dd>Front-End Motherboard</dd>
+			</div>
+			<div><dt>FET</dt>
+				<dd>Field Effect Transistor</dd>
+			</div>
+			<div><dt>FHS</dt>
+				<dd>Filesystem Hierarchy Standard</dd>
+			</div>
+			<div><dt>FICON</dt>
+				<dd>FIber CONnectivity</dd>
+			</div>
+			<div><dt>FIFO</dt>
+				<dd>First In First Out</dd>
+			</div>
+			<div><dt>FIPS</dt>
+				<dd>Federal Information Processing Standards</dd>
+			</div>
+			<div><dt>FL</dt>
+				<dd>Function Level</dd>
+			</div>
+			<div><dt>FLAC</dt>
+				<dd>Free Lossless Audio Codec</dd>
+			</div>
+			<div><dt>FLOPS</dt>
+				<dd>FLoating-Point Operations Per Second</dd>
+			</div>
+			<div><dt>FLOSS</dt>
+				<dd>Free/Libre/Open-Source Software</dd>
+			</div>
+			<div><dt>FMC</dt>
+				<dd>Fixed Mobile Convergence "Mobile UC or Unified Communications over Wireless"</dd>
+			</div>
+			<div><dt>FOLDOC</dt>
+				<dd>Free On-line Dictionary of Computing</dd>
+			</div>
+			<div><dt>FORTRAN</dt>
+				<dd>Formula Translation</dd>
+			</div>
+			<div><dt>FOSDEM</dt>
+				<dd>Free and Open-source Software Developers' European Meeting</dd>
+			</div>
+			<div><dt>FOSI</dt>
+				<dd>Formatted Output Specification Instance</dd>
+			</div>
+			<div><dt>FOSS</dt>
+				<dd>Free and Open-Source Software</dd>
+			</div>
+			<div><dt>FP</dt>
+				<dd>Function Programming</dd>
+			</div>
+			<div><dt>FP</dt>
+				<dd>Functional Programming</dd>
+			</div>
+			<div><dt>FPGA</dt>
+				<dd>Field Programmable Gate Array</dd>
+			</div>
+			<div><dt>FPS</dt>
+				<dd>Floating Point Systems</dd>
+			</div>
+			<div><dt>FPU</dt>
+				<dd>Floating-Point Unit</dd>
+			</div>
+			<div><dt>FRU</dt>
+				<dd>Field-Replaceable Unit</dd>
+			</div>
+			<div><dt>FS</dt>
+				<dd>File System</dd>
+			</div>
+			<div><dt>FSB</dt>
+				<dd>Front-Side Bus</dd>
+			</div>
+			<div><dt>fsck</dt>
+				<dd>File System Check</dd>
+			</div>
+			<div><dt>FSF</dt>
+				<dd>Free Software Foundation</dd>
+			</div>
+			<div><dt>FSM</dt>
+				<dd>Finite State Machine</dd>
+			</div>
+			<div><dt>FTTC</dt>
+				<dd>Fiber To The Curb</dd>
+			</div>
+			<div><dt>FTTH</dt>
+				<dd>Fiber To The Home</dd>
+			</div>
+			<div><dt>FTTP</dt>
+				<dd>Fiber To The Premises</dd>
+			</div>
+			<div><dt>FTP</dt>
+				<dd>File Transfer Protocol</dd>
+			</div>
+			<div><dt>FQDN</dt>
+				<dd>Fully Qualified Domain Name</dd>
+			</div>
+			<div><dt>FUD</dt>
+				<dd>Fear Uncertainty Doubt</dd>
+			</div>
+			<div><dt>FWS</dt>
+				<dd>Folding White Space</dd>
+			</div>
+			<div><dt>FXP</dt>
+				<dd>File eXchange Protocol</dd>
+			</div>
+			<div><dt>FYI</dt>
+				<dd>For Your Information</dd>
+			</div>
+			<div><dt>G11N</dt>
+				<dd>Globalization</dd>
+			</div>
+			<div><dt>Gas</dt>
+				<dd>GNU Assembler</dd>
+			</div>
+			<div><dt>Gb</dt>
+				<dd>Gigabit</dd>
+			</div>
+			<div><dt>GB</dt>
+				<dd>Gigabyte</dd>
+			</div>
+			<div><dt>Gbps</dt>
+				<dd>Gigabits per second</dd>
+			</div>
+			<div><dt>GCC</dt>
+				<dd>GNU Compiler Collection</dd>
+			</div>
+			<div><dt>GCJ</dt>
+				<dd>GNU Compiler for Java</dd>
+			</div>
+			<div><dt>GCP</dt>
+				<dd>Google Cloud Platform</dd>
+			</div>
+			<div><dt>GCR</dt>
+				<dd>Group Coded Recording</dd>
+			</div>
+			<div><dt>GDB</dt>
+				<dd>GNU Debugger</dd>
+			</div>
+			<div><dt>GDI</dt>
+				<dd>Graphics Device Interface</dd>
+			</div>
+			<div><dt>GFDL</dt>
+				<dd>GNU Free Documentation License</dd>
+			</div>
+			<div><dt>GIF</dt>
+				<dd>Graphics Interchange Format</dd>
+			</div>
+			<div><dt>GIGO</dt>
+				<dd>Garbage In, Garbage Out</dd>
+			</div>
+			<div><dt>GIMP</dt>
+				<dd>GNU Image Manipulation Program</dd>
+			</div>
+			<div><dt>GIMPS</dt>
+				<dd>Great Internet Mersenne Prime Search</dd>
+			</div>
+			<div><dt>GIS</dt>
+				<dd>Geographic Information System</dd>
+			</div>
+			<div><dt>GLUT</dt>
+				<dd>OpenGL Utility Toolkit</dd>
+			</div>
+			<div><dt>GML</dt>
+				<dd>Geography Markup Language</dd>
+			</div>
+			<div><dt>GNOME</dt>
+				<dd>GNU Network Object Model Environment</dd>
+			</div>
+			<div><dt>GNU</dt>
+				<dd>GNU's Not Unix</dd>
+			</div>
+			<div><dt>GOMS</dt>
+				<dd>Goals, Operators, Methods, and Selection rules</dd>
+			</div>
+			<div><dt>GPASM</dt>
+				<dd>GNU PIC ASseMbler</dd>
+			</div>
+			<div><dt>GPFS</dt>
+				<dd>General Parallel File System</dd>
+			</div>
+			<div><dt>GPG</dt>
+				<dd>GNU Privacy Guard</dd>
+			</div>
+			<div><dt>GPGPU</dt>
+				<dd>General-Purpose Computing on Graphics Processing Units</dd>
+			</div>
+			<div><dt>GPIB</dt>
+				<dd>General-Purpose Instrumentation Bus</dd>
+			</div>
+			<div><dt>GPL</dt>
+				<dd>General Public License</dd>
+			</div>
+			<div><dt>GPL</dt>
+				<dd>General-Purpose Language</dd>
+			</div>
+			<div><dt>GPRS</dt>
+				<dd>General Packet Radio Service</dd>
+			</div>
+			<div><dt>GPT</dt>
+				<dd>GUID Partition Table</dd>
+			</div>
+			<div><dt>GPU</dt>
+				<dd>Graphics Processing Unit</dd>
+			</div>
+			<div><dt>GRUB</dt>
+				<dd>Grand Unified Boot-Loader</dd>
+			</div>
+			<div><dt>GERAN</dt>
+				<dd>GSM EDGE Radio Access Network</dd>
+			</div>
+			<div><dt>GSM</dt>
+				<dd>Global System for Mobile Communications</dd>
+			</div>
+			<div><dt>GTK/GTK+</dt>
+				<dd>GIMP Toolkit[1]</dd>
+			</div>
+			<div><dt>GUI</dt>
+				<dd>Graphical user interface</dd>
+			</div>
+			<div><dt>GUID</dt>
+				<dd>Globally Unique IDentifier</dd>
+			</div>
+			<div><dt>GWT</dt>
+				<dd>Google Web Toolkit</dd>
+			</div>
+			<div><dt>HA</dt>
+				<dd>High availability</dd>
+			</div>
+			<div><dt>HAL</dt>
+				<dd>Hardware Abstraction Layer</dd>
+			</div>
+			<div><dt>HASP</dt>
+				<dd>Houston Automatic Spooling Priority</dd>
+			</div>
+			<div><dt>HBA</dt>
+				<dd>Host Bus Adapter</dd>
+			</div>
+			<div><dt>HCI</dt>
+				<dd>Human—Computer Interaction</dd>
+			</div>
+			<div><dt>HD</dt>
+				<dd>High Density</dd>
+			</div>
+			<div><dt>HDD</dt>
+				<dd>Hard Disk Drive</dd>
+			</div>
+			<div><dt>HCL</dt>
+				<dd>Hardware Compatibility List</dd>
+			</div>
+			<div><dt>HD DVD</dt>
+				<dd>High Definition DVD</dd>
+			</div>
+			<div><dt>HDL</dt>
+				<dd>Hardware Description Language</dd>
+			</div>
+			<div><dt>HDMI</dt>
+				<dd>High-Definition Multimedia Interface</dd>
+			</div>
+			<div><dt>HECI</dt>
+				<dd>Host Embedded Controller Interface</dd>
+			</div>
+			<div><dt>HF</dt>
+				<dd>High Frequency</dd>
+			</div>
+			<div><dt>HFS</dt>
+				<dd>Hierarchical File System</dd>
+			</div>
+			<div><dt>HHD</dt>
+				<dd>Hybrid Hard Drive</dd>
+			</div>
+			<div><dt>HID</dt>
+				<dd>Human Interface Device</dd>
+			</div>
+			<div><dt>HIG</dt>
+				<dd>Human Interface Guidelines</dd>
+			</div>
+			<div><dt>HIRD</dt>
+				<dd>Hurd of Interfaces Representing Depth</dd>
+			</div>
+			<div><dt>HLASM</dt>
+				<dd>High Level ASseMbler</dd>
+			</div>
+			<div><dt>HLS</dt>
+				<dd>HTTP Live Streaming</dd>
+			</div>
+			<div><dt>HMA</dt>
+				<dd>High Memory Area</dd>
+			</div>
+			<div><dt>HP</dt>
+				<dd>Hewlett-Packard</dd>
+			</div>
+			<div><dt>HPC</dt>
+				<dd>High-Performance Computing</dd>
+			</div>
+			<div><dt>HPFS</dt>
+				<dd>High Performance File System</dd>
+			</div>
+			<div><dt>HSDPA</dt>
+				<dd>High-Speed Downlink Packet Access</dd>
+			</div>
+			<div><dt>HTC</dt>
+				<dd>High-Throughput Computing</dd>
+			</div>
+			<div><dt>HSM</dt>
+				<dd>Hierarchical Storage Management</dd>
+			</div>
+			<div><dt>HT</dt>
+				<dd>Hyper Threading</dd>
+			</div>
+			<div><dt>HTM</dt>
+				<dd>Hierarchical Temporal Memory</dd>
+			</div>
+			<div><dt>HTML</dt>
+				<dd>Hypertext Markup Language</dd>
+			</div>
+			<div><dt>HTTP</dt>
+				<dd>Hypertext Transfer Protocol</dd>
+			</div>
+			<div><dt>HTTPd</dt>
+				<dd>Hypertext Transport Protocol Daemon</dd>
+			</div>
+			<div><dt>HTTPS</dt>
+				<dd>HTTP Secure</dd>
+			</div>
+			<div><dt>HTX</dt>
+				<dd>HyperTransport eXpansion</dd>
+			</div>
+			<div><dt>HURD</dt>
+				<dd>Hird of Unix-Replacing Daemons</dd>
+			</div>
+			<div><dt>HVD</dt>
+				<dd>Holographic Versatile Disc</dd>
+			</div>
+			<div><dt>Hz</dt>
+				<dd>Hertz</dd>
+			</div>
+			<div><dt>I²C</dt>
+				<dd>Inter-Integrated Circuit</dd>
+			</div>
+			<div><dt>I²S</dt>
+				<dd>Integrated Interchip Sound</dd>
+			</div>
+			<div><dt>I18N</dt>
+				<dd>Internationalization</dd>
+			</div>
+			<div><dt>IANA</dt>
+				<dd>Internet Assigned Numbers Authority</dd>
+			</div>
+			<div><dt>IaaS</dt>
+				<dd>Infrastructure as a Service</dd>
+			</div>
+			<div><dt>IaC</dt>
+				<dd>Infrastructure as Code</dd>
+			</div>
+			<div><dt>iBCS</dt>
+				<dd>Intel Binary Compatibility Standard</dd>
+			</div>
+			<div><dt>IBM</dt>
+				<dd>International Business Machines</dd>
+			</div>
+			<div><dt>IC</dt>
+				<dd>Integrated Circuit</dd>
+			</div>
+			<div><dt>ICANN</dt>
+				<dd>Internet Corporation for Assigned Names and Numbers</dd>
+			</div>
+			<div><dt>ICE</dt>
+				<dd>In-Circuit Emulator</dd>
+			</div>
+			<div><dt>ICE</dt>
+				<dd>Intrusion Countermeasure Electronics</dd>
+			</div>
+			<div><dt>ICH</dt>
+				<dd>I/O Controller Hub</dd>
+			</div>
+			<div><dt>ICMP</dt>
+				<dd>Internet Control Message Protocol</dd>
+			</div>
+			<div><dt>ICP</dt>
+				<dd>Internet Cache Protocol</dd>
+			</div>
+			<div><dt>ICS</dt>
+				<dd>Internet Connection Sharing</dd>
+			</div>
+			<div><dt>ICT</dt>
+				<dd>Information and Communication Technology</dd>
+			</div>
+			<div><dt>IDE</dt>
+				<dd>Integrated Development Environment</dd>
+			</div>
+			<div><dt>IDE</dt>
+				<dd>Integrated Drive Electronics</dd>
+			</div>
+			<div><dt>IDF</dt>
+				<dd>Intermediate Distribution Frame</dd>
+			</div>
+			<div><dt>IDF</dt>
+				<dd>Intermediate Data Format</dd>
+			</div>
+			<div><dt>IDL</dt>
+				<dd>Interactive Data Language</dd>
+			</div>
+			<div><dt>IDL</dt>
+				<dd>Interface Definition Language</dd>
+			</div>
+			<div><dt>IdP</dt>
+				<dd>Identity Provider (cybersecurity)</dd>
+			</div>
+			<div><dt>IDS</dt>
+				<dd>Intrusion Detection System</dd>
+			</div>
+			<div><dt>IE</dt>
+				<dd>Internet Explorer</dd>
+			</div>
+			<div><dt>IEC</dt>
+				<dd>International Electrotechnical Commission</dd>
+			</div>
+			<div><dt>IEEE</dt>
+				<dd>Institute of Electrical and Electronics Engineers</dd>
+			</div>
+			<div><dt>IETF</dt>
+				<dd>Internet Engineering Task Force</dd>
+			</div>
+			<div><dt>IFL</dt>
+				<dd>Integrated Facility for Linux</dd>
+			</div>
+			<div><dt>IGMP</dt>
+				<dd>Internet Group Management Protocol</dd>
+			</div>
+			<div><dt>IGRP</dt>
+				<dd>Interior Gateway Routing Protocol</dd>
+			</div>
+			<div><dt>IHV</dt>
+				<dd>Independent Hardware Vendor</dd>
+			</div>
+			<div><dt>IIOP</dt>
+				<dd>Internet Inter-Orb Protocol</dd>
+			</div>
+			<div><dt>IIS</dt>
+				<dd>Internet Information Services</dd>
+			</div>
+			<div><dt>IKE</dt>
+				<dd>Internet Key Exchange</dd>
+			</div>
+			<div><dt>IL</dt>
+				<dd>Intermediate Language</dd>
+			</div>
+			<div><dt>IM</dt>
+				<dd>Instant Message or Instant Messaging</dd>
+			</div>
+			<div><dt>IMAP</dt>
+				<dd>Internet Message Access Protocol</dd>
+			</div>
+			<div><dt>IME</dt>
+				<dd>Input Method Editor</dd>
+			</div>
+			<div><dt>INFOSEC</dt>
+				<dd>Information Systems Security</dd>
+			</div>
+			<div><dt>I/O</dt>
+				<dd>Input/output</dd>
+			</div>
+			<div><dt>IoT</dt>
+				<dd>Internet of Things</dd>
+			</div>
+			<div><dt>IoC</dt>
+				<dd>Inversion of Control</dd>
+			</div>
+			<div><dt>IP</dt>
+				<dd>Intellectual Property</dd>
+			</div>
+			<div><dt>IP</dt>
+				<dd>Internet Protocol</dd>
+			</div>
+			<div><dt>IPAM</dt>
+				<dd>IP Address Management</dd>
+			</div>
+			<div><dt>IPC</dt>
+				<dd>Inter-Process Communication</dd>
+			</div>
+			<div><dt>IPL</dt>
+				<dd>Initial Program Load</dd>
+			</div>
+			<div><dt>IPMI</dt>
+				<dd>Intelligent Platform Management Interface</dd>
+			</div>
+			<div><dt>IPO</dt>
+				<dd>Inter Procedural Optimization</dd>
+			</div>
+			<div><dt>IPP</dt>
+				<dd>Internet Printing Protocol</dd>
+			</div>
+			<div><dt>IPS</dt>
+				<dd>In-Plane Switching</dd>
+			</div>
+			<div><dt>IPS</dt>
+				<dd>Instructions Per Second</dd>
+			</div>
+			<div><dt>IPS</dt>
+				<dd>Intrusion Prevention System</dd>
+			</div>
+			<div><dt>IPsec</dt>
+				<dd>Internet Protocol security</dd>
+			</div>
+			<div><dt>IPTV</dt>
+				<dd>Internet Protocol Television</dd>
+			</div>
+			<div><dt>IPv4</dt>
+				<dd>Internet Protocol version 4</dd>
+			</div>
+			<div><dt>IPv6</dt>
+				<dd>Internet Protocol version 6</dd>
+			</div>
+			<div><dt>IPX</dt>
+				<dd>Internetwork Packet Exchange</dd>
+			</div>
+			<div><dt>IR</dt>
+				<dd>Intermediate Representation</dd>
+			</div>
+			<div><dt>IRC</dt>
+				<dd>Internet Relay Chat</dd>
+			</div>
+			<div><dt>IrDA</dt>
+				<dd>Infrared Data Association</dd>
+			</div>
+			<div><dt>IRI</dt>
+				<dd>Internationalized Resource Identifier</dd>
+			</div>
+			<div><dt>IRP</dt>
+				<dd>I/O Request Packet</dd>
+			</div>
+			<div><dt>IRQ</dt>
+				<dd>Interrupt Request</dd>
+			</div>
+			<div><dt>IS</dt>
+				<dd>Information Systems</dd>
+			</div>
+			<div><dt>IS-IS</dt>
+				<dd>Intermediate System to Intermediate System</dd>
+			</div>
+			<div><dt>ISA</dt>
+				<dd>Industry Standard Architecture</dd>
+			</div>
+			<div><dt>ISA</dt>
+				<dd>Instruction Set Architecture</dd>
+			</div>
+			<div><dt>ISAM</dt>
+				<dd>Indexed Sequential Access Method</dd>
+			</div>
+			<div><dt>ISATAP</dt>
+				<dd>Intra-Site Automatic Tunnel Addressing Protocol</dd>
+			</div>
+			<div><dt>ISC</dt>
+				<dd>Internet Storm Center</dd>
+			</div>
+			<div><dt>iSCSI</dt>
+				<dd>Internet Small Computer System Interface</dd>
+			</div>
+			<div><dt>ISDN</dt>
+				<dd>Integrated Services Digital Network</dd>
+			</div>
+			<div><dt>ISO</dt>
+				<dd>International Organization for Standardization</dd>
+			</div>
+			<div><dt>iSNS</dt>
+				<dd>Internet Storage Name Service</dd>
+			</div>
+			<div><dt>ISP</dt>
+				<dd>Internet Service Provider</dd>
+			</div>
+			<div><dt>ISPF</dt>
+				<dd>Interactive System Productivity Facility</dd>
+			</div>
+			<div><dt>ISR</dt>
+				<dd>Interrupt Service Routine</dd>
+			</div>
+			<div><dt>ISV</dt>
+				<dd>Independent Software Vendor</dd>
+			</div>
+			<div><dt>IT</dt>
+				<dd>Information Technology</dd>
+			</div>
+			<div><dt>ITIL</dt>
+				<dd>Information Technology Infrastructure Library</dd>
+			</div>
+			<div><dt>ITL</dt>
+				<dd>Interval Temporal Logic</dd>
+			</div>
+			<div><dt>ITU</dt>
+				<dd>International Telecommunication Union</dd>
+			</div>
+			<div><dt>IVR(S)</dt>
+				<dd>Interactive Voice Response (System)</dd>
+			</div>
+			<div><dt>J2EE</dt>
+				<dd>Java 2 Enterprise Edition</dd>
+			</div>
+			<div><dt>J2ME</dt>
+				<dd>Java 2 Micro Edition</dd>
+			</div>
+			<div><dt>J2SE</dt>
+				<dd>Java 2 Standard Edition</dd>
+			</div>
+			<div><dt>JAXB</dt>
+				<dd>Java Architecture for XML Binding</dd>
+			</div>
+			<div><dt>JAX-RPC</dt>
+				<dd>Jakarta XML (formerly Java XML) for Remote Procedure Calls</dd>
+			</div>
+			<div><dt>JAXP</dt>
+				<dd>Java API for XML Processing</dd>
+			</div>
+			<div><dt>JBOD</dt>
+				<dd>Just a Bunch of Disks</dd>
+			</div>
+			<div><dt>JCE</dt>
+				<dd> Java Cryptography Extension</dd>
+			</div>
+			<div><dt>JCL</dt>
+				<dd>Job Control Language</dd>
+			</div>
+			<div><dt>JCP</dt>
+				<dd>Java Community Process</dd>
+			</div>
+			<div><dt>JDBC</dt>
+				<dd>Java Database Connectivity</dd>
+			</div>
+			<div><dt>JDK</dt>
+				<dd>Java Development Kit</dd>
+			</div>
+			<div><dt>JEE</dt>
+				<dd>Java Enterprise Edition</dd>
+			</div>
+			<div><dt>JES</dt>
+				<dd>Job Entry Subsystem</dd>
+			</div>
+			<div><dt>JDS</dt>
+				<dd>Java Desktop System</dd>
+			</div>
+			<div><dt>JFC</dt>
+				<dd>Java Foundation Classes</dd>
+			</div>
+			<div><dt>JFET</dt>
+				<dd>Junction Field-Effect Transistor</dd>
+			</div>
+			<div><dt>JFS</dt>
+				<dd>IBM Journaling File System</dd>
+			</div>
+			<div><dt>JINI</dt>
+				<dd>Jini Is Not Initials</dd>
+			</div>
+			<div><dt>JIT</dt>
+				<dd>Just-In-Time</dd>
+			</div>
+			<div><dt>JME</dt>
+				<dd>Java Micro Edition</dd>
+			</div>
+			<div><dt>JMX</dt>
+				<dd>Java Management Extensions</dd>
+			</div>
+			<div><dt>JMS</dt>
+				<dd>Java Message Service</dd>
+			</div>
+			<div><dt>JNDI</dt>
+				<dd>Java Naming and Directory Interface</dd>
+			</div>
+			<div><dt>JNI</dt>
+				<dd>Java Native Interface</dd>
+			</div>
+			<div><dt>JNZ</dt>
+				<dd>Jump non-zero</dd>
+			</div>
+			<div><dt>JPEG</dt>
+				<dd>Joint Photographic Experts Group</dd>
+			</div>
+			<div><dt>JRE</dt>
+				<dd>Java Runtime Environment</dd>
+			</div>
+			<div><dt>JS</dt>
+				<dd>JavaScript</dd>
+			</div>
+			<div><dt>JSE</dt>
+				<dd>Java Standard Edition</dd>
+			</div>
+			<div><dt>JSON</dt>
+				<dd>JavaScript Object Notation</dd>
+			</div>
+			<div><dt>JSP</dt>
+				<dd>Jackson Structured Programming</dd>
+			</div>
+			<div><dt>JSP</dt>
+				<dd>JavaServer Pages</dd>
+			</div>
+			<div><dt>JTAG</dt>
+				<dd>Joint Test Action Group</dd>
+			</div>
+			<div><dt>JVM</dt>
+				<dd>Java Virtual Machine</dd>
+			</div>
+			<div><dt>K&R</dt>
+				<dd>Kernighan and Ritchie</dd>
+			</div>
+			<div><dt>K8s</dt>
+				<dd>Kubernetes</dd>
+			</div>
+			<div><dt>KB</dt>
+				<dd>Keyboard</dd>
+			</div>
+			<div><dt>Kb</dt>
+				<dd>Kilobit</dd>
+			</div>
+			<div><dt>KB</dt>
+				<dd>Kilobyte</dd>
+			</div>
+			<div><dt>KB</dt>
+				<dd>Knowledge Base</dd>
+			</div>
+			<div><dt>Kbps</dt>
+				<dd>Kilobits per second</dd>
+			</div>
+			<div><dt>KiB</dt>
+				<dd>Kibibyte</dd>
+			</div>
+			<div><dt>KDE</dt>
+				<dd>K Desktop Environment</dd>
+			</div>
+			<div><dt>kHz</dt>
+				<dd>Kilohertz</dd>
+			</div>
+			<div><dt>KRL</dt>
+				<dd>Knowledge Representation Language</dd>
+			</div>
+			<div><dt>KVM</dt>
+				<dd>Keyboard, Video, Mouse</dd>
+			</div>
+			<div><dt>L10N</dt>
+				<dd>Localization</dd>
+			</div>
+			<div><dt>L2TP</dt>
+				<dd>Layer two Tunneling Protocol</dd>
+			</div>
+			<div><dt>LACP</dt>
+				<dd>Link Aggregation Control Protocol</dd>
+			</div>
+			<div><dt>LAMP</dt>
+				<dd>Linux Apache MySQL Perl</dd>
+			</div>
+			<div><dt>LAMP</dt>
+				<dd>Linux Apache MySQL PHP</dd>
+			</div>
+			<div><dt>LAMP</dt>
+				<dd>Linux Apache MySQL Python</dd>
+			</div>
+			<div><dt>LAN</dt>
+				<dd>Local Area Network</dd>
+			</div>
+			<div><dt>LBA</dt>
+				<dd>Logical Block Addressing</dd>
+			</div>
+			<div><dt>LB</dt>
+				<dd>Load Balancer</dd>
+			</div>
+			<div><dt>LCD</dt>
+				<dd>Liquid Crystal Display</dd>
+			</div>
+			<div><dt>LCR</dt>
+				<dd>Least Cost Routing</dd>
+			</div>
+			<div><dt>LCOS</dt>
+				<dd>Liquid Crystal On Silicon</dd>
+			</div>
+			<div><dt>LDAP</dt>
+				<dd>Lightweight Directory Access Protocol</dd>
+			</div>
+			<div><dt>LE</dt>
+				<dd>Logical Extents</dd>
+			</div>
+			<div><dt>LED</dt>
+				<dd>Light-Emitting Diode</dd>
+			</div>
+			<div><dt>LF</dt>
+				<dd>Line Feed</dd>
+			</div>
+			<div><dt>LF</dt>
+				<dd>Low Frequency</dd>
+			</div>
+			<div><dt>LFS</dt>
+				<dd>Linux From Scratch</dd>
+			</div>
+			<div><dt>LGA</dt>
+				<dd>Land Grid Array</dd>
+			</div>
+			<div><dt>LGPL</dt>
+				<dd>Lesser General Public License</dd>
+			</div>
+			<div><dt>LIB</dt>
+				<dd>LIBrary</dd>
+			</div>
+			<div><dt>LIF</dt>
+				<dd>Low Insertion Force</dd>
+			</div>
+			<div><dt>LIFO</dt>
+				<dd>Last In First Out</dd>
+			</div>
+			<div><dt>LILO</dt>
+				<dd>Linux Loader</dd>
+			</div>
+			<div><dt>LIP</dt>
+				<dd>Loop Initialization Primitive</dd>
+			</div>
+			<div><dt>LISP</dt>
+				<dd>LISt Processing</dd>
+			</div>
+			<div><dt>LKML</dt>
+				<dd>Linux Kernel Mailing List</dd>
+			</div>
+			<div><dt>LM</dt>
+				<dd>Lan Manager</dd>
+			</div>
+			<div><dt>LOC</dt>
+				<dd>Lines of Code</dd>
+			</div>
+			<div><dt>LPC</dt>
+				<dd>Lars Pensjö C</dd>
+			</div>
+			<div><dt>LPI</dt>
+				<dd>Linux Professional Institute</dd>
+			</div>
+			<div><dt>LPT</dt>
+				<dd> Line Print Terminal</dd>
+			</div>
+			<div><dt>LRU</dt>
+				<dd>Least Recently Used</dd>
+			</div>
+			<div><dt>LSB</dt>
+				<dd>Least Significant Bit</dd>
+			</div>
+			<div><dt>LSB</dt>
+				<dd>Linux Standard Base</dd>
+			</div>
+			<div><dt>LSI</dt>
+				<dd>Large-Scale Integration</dd>
+			</div>
+			<div><dt>LTE</dt>
+				<dd>Long Term Evolution</dd>
+			</div>
+			<div><dt>LTL</dt>
+				<dd>Linear Temporal Logic</dd>
+			</div>
+			<div><dt>LTR</dt>
+				<dd>Left-to-Right</dd>
+			</div>
+			<div><dt>LUG</dt>
+				<dd>Linux User Group</dd>
+			</div>
+			<div><dt>LUN</dt>
+				<dd>Logical Unit Number</dd>
+			</div>
+			<div><dt>LV</dt>
+				<dd>Logical Volume</dd>
+			</div>
+			<div><dt>LVD</dt>
+				<dd>Low Voltage Differential</dd>
+			</div>
+			<div><dt>LVM</dt>
+				<dd>Logical Volume Management</dd>
+			</div>
+			<div><dt>LZW</dt>
+				<dd>Lempel-Ziv-Welch</dd>
+			</div>
+			<div><dt>MAC</dt>
+				<dd>Mandatory Access Control</dd>
+			</div>
+			<div><dt>MAC</dt>
+				<dd>Media Access Control</dd>
+			</div>
+			<div><dt>MAC</dt>
+				<dd>Message authentication code</dd>
+			</div>
+			<div><dt>MANET</dt>
+				<dd>Mobile Ad-Hoc Network</dd>
+			</div>
+			<div><dt>MAN</dt>
+				<dd>Metropolitan Area Network</dd>
+			</div>
+			<div><dt>MAPI</dt>
+				<dd>Messaging Application Programming Interface</dd>
+			</div>
+			<div><dt>MBCS</dt>
+				<dd>Multi Byte Character Set</dd>
+			</div>
+			<div><dt>MBD</dt>
+				<dd>Model-Based Design</dd>
+			</div>
+			<div><dt>MBR</dt>
+				<dd>Master Boot Record</dd>
+			</div>
+			<div><dt>Mb</dt>
+				<dd>Megabit</dd>
+			</div>
+			<div><dt>MB</dt>
+				<dd>Megabyte</dd>
+			</div>
+			<div><dt>Mbps</dt>
+				<dd>Megabits per second</dd>
+			</div>
+			<div><dt>MCAD</dt>
+				<dd>Microsoft Certified Application Developer</dd>
+			</div>
+			<div><dt>MCAS</dt>
+				<dd>Microsoft Certified Application Specialist</dd>
+			</div>
+			<div><dt>MCA</dt>
+				<dd>Micro Channel Architecture</dd>
+			</div>
+			<div><dt>MCA</dt>
+				<dd>Microsoft Certified Architect</dd>
+			</div>
+			<div><dt>MCDBA</dt>
+				<dd>Microsoft Certified DataBase Administrator</dd>
+			</div>
+			<div><dt>MCDST</dt>
+				<dd>Microsoft Certified Desktop Support Technician</dd>
+			</div>
+			<div><dt>MCITP</dt>
+				<dd>Microsoft Certified Information Technology Professional</dd>
+			</div>
+			<div><dt>MCM</dt>
+				<dd>Microsoft Certified Master</dd>
+			</div>
+			<div><dt>MCPD</dt>
+				<dd>Microsoft Certified Professional Developer</dd>
+			</div>
+			<div><dt>MCP</dt>
+				<dd>Microsoft Certified Professional</dd>
+			</div>
+			<div><dt>MCSA</dt>
+				<dd>Microsoft Certified Systems Administrator</dd>
+			</div>
+			<div><dt>MCSD</dt>
+				<dd>Microsoft Certified Solution Developer</dd>
+			</div>
+			<div><dt>MCSE</dt>
+				<dd>Microsoft Certified Systems Engineer</dd>
+			</div>
+			<div><dt>MCTS</dt>
+				<dd>Microsoft Certified Technology Specialist</dd>
+			</div>
+			<div><dt>MCT</dt>
+				<dd>Microsoft Certified Trainer</dd>
+			</div>
+			<div><dt>MDA</dt>
+				<dd>Monochrome Display Adapter</dd>
+			</div>
+			<div><dt>MDA</dt>
+				<dd>Mail Delivery Agent</dd>
+			</div>
+			<div><dt>MDA</dt>
+				<dd>Model-Driven Architecture</dd>
+			</div>
+			<div><dt>MDD/MDSD</dt>
+				<dd>Model-Driven (Software) Development</dd>
+			</div>
+			<div><dt>MDF</dt>
+				<dd>Main Distribution Frame</dd>
+			</div>
+			<div><dt>MDI</dt>
+				<dd>Multiple-Document Interface</dd>
+			</div>
+			<div><dt>MDM</dt>
+				<dd>Master Data Management</dd>
+			</div>
+			<div><dt>ME</dt>
+				<dd>Microsoft Edge</dd>
+			</div>
+			<div><dt>ME</dt>
+				<dd>[Windows] Millennium Edition</dd>
+			</div>
+			<div><dt>MFA</dt>
+				<dd>Multi-factor authentication</dd>
+			</div>
+			<div><dt>MFC</dt>
+				<dd>Microsoft Foundation Classes</dd>
+			</div>
+			<div><dt>MFT</dt>
+				<dd>Master File Table</dd>
+			</div>
+			<div><dt>MFM</dt>
+				<dd>Modified Frequency Modulation</dd>
+			</div>
+			<div><dt>MF</dt>
+				<dd>Medium Frequency</dd>
+			</div>
+			<div><dt>MGCP</dt>
+				<dd>Media Gateway Control Protocol</dd>
+			</div>
+			<div><dt>MHz</dt>
+				<dd>Megahertz</dd>
+			</div>
+			<div><dt>MIB</dt>
+				<dd>Management Information Base</dd>
+			</div>
+			<div><dt>MICR</dt>
+				<dd>Magnetic Ink Character Recognition or Magnetic Ink Character Reader</dd>
+			</div>
+			<div><dt>MIDI</dt>
+				<dd>Musical Instrument Digital Interface</dd>
+			</div>
+			<div><dt>MIMD</dt>
+				<dd>Multiple Instruction, Multiple Data</dd>
+			</div>
+			<div><dt>MIME</dt>
+				<dd>Multipurpose Internet Mail Extensions</dd>
+			</div>
+			<div><dt>MIMO</dt>
+				<dd>Multiple-Input Multiple-Output</dd>
+			</div>
+			<div><dt>MINIX</dt>
+				<dd>MIni-uNIX</dd>
+			</div>
+			<div><dt>MIPS</dt>
+				<dd>Microprocessor without Interlocked Pipeline Stages</dd>
+			</div>
+			<div><dt>MIPS</dt>
+				<dd>Million Instructions Per Second</dd>
+			</div>
+			<div><dt>MISD</dt>
+				<dd>Multiple Instruction, Single Data</dd>
+			</div>
+			<div><dt>MIS</dt>
+				<dd>Management Information Systems</dd>
+			</div>
+			<div><dt>MIT</dt>
+				<dd>Massachusetts Institute of Technology</dd>
+			</div>
+			<div><dt>ML</dt>
+				<dd>Machine Learning</dd>
+			</div>
+			<div><dt>MMC</dt>
+				<dd>Microsoft Management Console</dd>
+			</div>
+			<div><dt>MMDS</dt>
+				<dd>Mortality Medical Data System</dd>
+			</div>
+			<div><dt>MMDS</dt>
+				<dd>Multichannel Multipoint Distribution Service</dd>
+			</div>
+			<div><dt>MMF</dt>
+				<dd>Multi-Mode (optical) Fiber</dd>
+			</div>
+			<div><dt>MMIO</dt>
+				<dd>Memory-Mapped I/O</dd>
+			</div>
+			<div><dt>MMI</dt>
+				<dd>Man Machine Interface.</dd>
+			</div>
+			<div><dt>MMORPG</dt>
+				<dd>Massively Multiplayer Online Role-Playing Game</dd>
+			</div>
+			<div><dt>MMS</dt>
+				<dd>Multimedia Message Service</dd>
+			</div>
+			<div><dt>MMU</dt>
+				<dd>Memory Management Unit</dd>
+			</div>
+			<div><dt>MMX</dt>
+				<dd>Multi-Media Extensions</dd>
+			</div>
+			<div><dt>MNG</dt>
+				<dd>Multiple-image Network Graphics</dd>
+			</div>
+			<div><dt>MoBo</dt>
+				<dd>Motherboard</dd>
+			</div>
+			<div><dt>MOM</dt>
+				<dd>Message-Oriented Middleware</dd>
+			</div>
+			<div><dt>MOO</dt>
+				<dd>MUD Object Oriented</dd>
+			</div>
+			<div><dt>MOP</dt>
+				<dd>Meta-Object Protocol</dd>
+			</div>
+			<div><dt>MOSFET</dt>
+				<dd>Metal-Oxide Semiconductor Field Effect Transistor</dd>
+			</div>
+			<div><dt>MOS</dt>
+				<dd>Microsoft Office Specialist</dd>
+			</div>
+			<div><dt>MOTD</dt>
+				<dd>Message Of The Day</dd>
+			</div>
+			<div><dt>MOUS</dt>
+				<dd>Microsoft Office User Specialist</dd>
+			</div>
+			<div><dt>MOV</dt>
+				<dd>Apple QuickTime Multimedia File</dd>
+			</div>
+			<div><dt>MPAA</dt>
+				<dd>Motion Picture Association of America</dd>
+			</div>
+			<div><dt>MPEG</dt>
+				<dd>Motion Pictures Experts Group</dd>
+			</div>
+			<div><dt>MPLS</dt>
+				<dd>Multiprotocol Label Switching</dd>
+			</div>
+			<div><dt>MPL</dt>
+				<dd>Mozilla Public License</dd>
+			</div>
+			<div><dt>MPU</dt>
+				<dd>Microprocessor Unit</dd>
+			</div>
+			<div><dt>MS-DOS</dt>
+				<dd>Microsoft DOS</dd>
+			</div>
+			<div><dt>MSA</dt>
+				<dd>Mail Submission Agent</dd>
+			</div>
+			<div><dt>MSB</dt>
+				<dd>Most Significant Bit</dd>
+			</div>
+			<div><dt>MSDN</dt>
+				<dd>Microsoft Developer Network</dd>
+			</div>
+			<div><dt>MSI</dt>
+				<dd>Medium-Scale Integration</dd>
+			</div>
+			<div><dt>MSI</dt>
+				<dd>Message Signaled Interrupt</dd>
+			</div>
+			<div><dt>MSI</dt>
+				<dd>Microsoft Installer</dd>
+			</div>
+			<div><dt>MSN</dt>
+				<dd>Microsoft Network</dd>
+			</div>
+			<div><dt>MS</dt>
+				<dd>Microsoft</dd>
+			</div>
+			<div><dt>MS</dt>
+				<dd>Memory Stick</dd>
+			</div>
+			<div><dt>MTA</dt>
+				<dd>Mail Transfer Agent</dd>
+			</div>
+			<div><dt>MTA</dt>
+				<dd>Microsoft Technology Associate</dd>
+			</div>
+			<div><dt>MTBF</dt>
+				<dd>Mean Time Between Failures</dd>
+			</div>
+			<div><dt>MTU</dt>
+				<dd>Maximum Transmission Unit</dd>
+			</div>
+			<div><dt>MT</dt>
+				<dd>Machine Translation</dd>
+			</div>
+			<div><dt>MUA</dt>
+				<dd>Mail User Agent</dd>
+			</div>
+			<div><dt>MUD</dt>
+				<dd>Multi-User Dungeon</dd>
+			</div>
+			<div><dt>MU</dt>
+				<dd>Memory Unit</dd>
+			</div>
+			<div><dt>MVC</dt>
+				<dd>Model-View-Controller</dd>
+			</div>
+			<div><dt>MVP</dt>
+				<dd>Most Valuable Professional</dd>
+			</div>
+			<div><dt>MVS</dt>
+				<dd>Multiple Virtual Storage</dd>
+			</div>
+			<div><dt>MWC</dt>
+				<dd>Mobile World Congress</dd>
+			</div>
+			<div><dt>MXF</dt>
+				<dd>Material Exchange Format</dd>
+			</div>
+			<div><dt>MX</dt>
+				<dd>Mail exchange</dd>
+			</div>
+			<div><dt>NAC</dt>
+				<dd>Network Access Control</dd>
+			</div>
+			<div><dt>NACK</dt>
+				<dd>Negative ACKnowledgement</dd>
+			</div>
+			<div><dt>NAK</dt>
+				<dd>Negative AcKnowledge Character</dd>
+			</div>
+			<div><dt>NaN</dt>
+				<dd>Not a Number</dd>
+			</div>
+			<div><dt>NAP</dt>
+				<dd>Network Access Protection</dd>
+			</div>
+			<div><dt>NAS</dt>
+				<dd>Network-Attached Storage</dd>
+			</div>
+			<div><dt>NASM</dt>
+				<dd>Netwide ASseMbler</dd>
+			</div>
+			<div><dt>NAT</dt>
+				<dd>Network Address Translation</dd>
+			</div>
+			<div><dt>NCP</dt>
+				<dd>NetWare Core Protocol</dd>
+			</div>
+			<div><dt>NCQ</dt>
+				<dd>Native Command Queuing</dd>
+			</div>
+			<div><dt>NCSA</dt>
+				<dd>National Center for Supercomputing Applications</dd>
+			</div>
+			<div><dt>NDIS</dt>
+				<dd>Network Driver Interface Specification</dd>
+			</div>
+			<div><dt>NDPS</dt>
+				<dd>Novell Distributed Print Services</dd>
+			</div>
+			<div><dt>NDS</dt>
+				<dd>Novell Directory Services</dd>
+			</div>
+			<div><dt>NEP</dt>
+				<dd>Network Equipment Provider</dd>
+			</div>
+			<div><dt>NetBIOS</dt>
+				<dd>Network Basic Input/Output System</dd>
+			</div>
+			<div><dt>NetBT</dt>
+				<dd>NetBIOS over TCP/IP</dd>
+			</div>
+			<div><dt>NEXT</dt>
+				<dd>Near-End CrossTalk</dd>
+			</div>
+			<div><dt>NFA</dt>
+				<dd>Nondeterministic Finite Automaton</dd>
+			</div>
+			<div><dt>NFC</dt>
+				<dd>Near-field communication</dd>
+			</div>
+			<div><dt>NFS</dt>
+				<dd>Network File System</dd>
+			</div>
+			<div><dt>NGL</dt>
+				<dd>aNGeL</dd>
+			</div>
+			<div><dt>NGSCB</dt>
+				<dd>Next-Generation Secure Computing Base</dd>
+			</div>
+			<div><dt>NI</dt>
+				<dd>National Instruments</dd>
+			</div>
+			<div><dt>NIC</dt>
+				<dd>Network Interface Controller or Network Interface Card</dd>
+			</div>
+			<div><dt>NIM</dt>
+				<dd>No Internal Message</dd>
+			</div>
+			<div><dt>NIO</dt>
+				<dd>Non-blocking I/O</dd>
+			</div>
+			<div><dt>NIST</dt>
+				<dd>National Institute of Standards and Technology</dd>
+			</div>
+			<div><dt>NLE</dt>
+				<dd>Non-Linear Editing system</dd>
+			</div>
+			<div><dt>NLP</dt>
+				<dd>Natural Language Processing</dd>
+			</div>
+			<div><dt>NLS</dt>
+				<dd>Native Language Support</dd>
+			</div>
+			<div><dt>NMI</dt>
+				<dd>Non-Maskable Interrupt</dd>
+			</div>
+			<div><dt>NNTP</dt>
+				<dd>Network News Transfer Protocol</dd>
+			</div>
+			<div><dt>NOC</dt>
+				<dd>Network Operations Center</dd>
+			</div>
+			<div><dt>NOP</dt>
+				<dd>No OPeration</dd>
+			</div>
+			<div><dt>NOS</dt>
+				<dd>Network Operating System</dd>
+			</div>
+			<div><dt>NP</dt>
+				<dd>Nondeterministic Polynomial time</dd>
+			</div>
+			<div><dt>NPL</dt>
+				<dd>Netscape Public License</dd>
+			</div>
+			<div><dt>NPTL</dt>
+				<dd>Native POSIX Thread Library</dd>
+			</div>
+			<div><dt>NPU</dt>
+				<dd>Network Processing Unit</dd>
+			</div>
+			<div><dt>NS</dt>
+				<dd>Netscape</dd>
+			</div>
+			<div><dt>NSIS</dt>
+				<dd>Nullsoft Scriptable Install System</dd>
+			</div>
+			<div><dt>NSPR</dt>
+				<dd>Netscape Portable Runtime</dd>
+			</div>
+			<div><dt>NSS</dt>
+				<dd>Novell Storage Service</dd>
+			</div>
+			<div><dt>NSS</dt>
+				<dd>Network Security Services</dd>
+			</div>
+			<div><dt>NSS</dt>
+				<dd>Name Service Switch</dd>
+			</div>
+			<div><dt>NT</dt>
+				<dd>New Technology</dd>
+			</div>
+			<div><dt>NTFS</dt>
+				<dd>NT Filesystem</dd>
+			</div>
+			<div><dt>NTLM</dt>
+				<dd>NT Lan Manager</dd>
+			</div>
+			<div><dt>NTP</dt>
+				<dd>Network Time Protocol</dd>
+			</div>
+			<div><dt>NUMA</dt>
+				<dd>Non-Uniform Memory Access</dd>
+			</div>
+			<div><dt>NURBS</dt>
+				<dd>Non-Uniform Rational B-Spline</dd>
+			</div>
+			<div><dt>NVR</dt>
+				<dd>Network Video Recorder</dd>
+			</div>
+			<div><dt>NVRAM</dt>
+				<dd>Non-Volatile Random-Access Memory</dd>
+			</div>
+			<div><dt>OASIS</dt>
+				<dd>Organization for the Advancement of Structured Information Standards</dd>
+			</div>
+			<div><dt>OAT</dt>
+				<dd>Operational Acceptance Testing</dd>
+			</div>
+			<div><dt>OBSAI</dt>
+				<dd>Open Base Station Architecture Initiative</dd>
+			</div>
+			<div><dt>OCR</dt>
+				<dd>Optical Character Recognition</dd>
+			</div>
+			<div><dt>ODBC</dt>
+				<dd>Open Database Connectivity</dd>
+			</div>
+			<div><dt>OEM</dt>
+				<dd>Original Equipment Manufacturer</dd>
+			</div>
+			<div><dt>OES</dt>
+				<dd>Open Enterprise Server</dd>
+			</div>
+			<div><dt>OFDM</dt>
+				<dd>Orthogonal Frequency-Division Multiplexing</dd>
+			</div>
+			<div><dt>OFTC</dt>
+				<dd>Open and Free Technology Community</dd>
+			</div>
+			<div><dt>OID</dt>
+				<dd>Object Identifier</dd>
+			</div>
+			<div><dt>OLAP</dt>
+				<dd>Online Analytical Processing</dd>
+			</div>
+			<div><dt>OLE</dt>
+				<dd>Object Linking and Embedding</dd>
+			</div>
+			<div><dt>OLED</dt>
+				<dd>Organic Light Emitting Diode</dd>
+			</div>
+			<div><dt>OLPC</dt>
+				<dd>One Laptop per Child</dd>
+			</div>
+			<div><dt>OLTP</dt>
+				<dd>Online Transaction Processing</dd>
+			</div>
+			<div><dt>OMF</dt>
+				<dd>Object Module Format</dd>
+			</div>
+			<div><dt>OMG</dt>
+				<dd>Object Management Group</dd>
+			</div>
+			<div><dt>OMR</dt>
+				<dd>Optical Mark Reader</dd>
+			</div>
+			<div><dt>ooRexx</dt>
+				<dd>Open Object Rexx</dd>
+			</div>
+			<div><dt>OO</dt>
+				<dd>Object-Oriented</dd>
+			</div>
+			<div><dt>OO</dt>
+				<dd>OpenOffice</dd>
+			</div>
+			<div><dt>OOE</dt>
+				<dd>Out-of-Order Execution</dd>
+			</div>
+			<div><dt>OOM</dt>
+				<dd>Out Of Memory</dd>
+			</div>
+			<div><dt>OOo</dt>
+				<dd>OpenOffice.org</dd>
+			</div>
+			<div><dt>OoOE</dt>
+				<dd>Out-of-Order Execution</dd>
+			</div>
+			<div><dt>OOP</dt>
+				<dd>Object-Oriented Programming</dd>
+			</div>
+			<div><dt>OOTB</dt>
+				<dd>Out of the box</dd>
+			</div>
+			<div><dt>OPML</dt>
+				<dd>Outline Processor Markup Language</dd>
+			</div>
+			<div><dt>ORB</dt>
+				<dd>Object Request Broker</dd>
+			</div>
+			<div><dt>ORM</dt>
+				<dd>Object–Relational Mapping</dd>
+			</div>
+			<div><dt>OS</dt>
+				<dd>Open Source</dd>
+			</div>
+			<div><dt>OS</dt>
+				<dd>Operating System</dd>
+			</div>
+			<div><dt>OSCON</dt>
+				<dd>O'Reilly Open Source CONvention</dd>
+			</div>
+			<div><dt>OSDN</dt>
+				<dd>Open Source Development Network</dd>
+			</div>
+			<div><dt>OSI</dt>
+				<dd>Open Source Initiative</dd>
+			</div>
+			<div><dt>OSI</dt>
+				<dd>Open Systems Interconnection</dd>
+			</div>
+			<div><dt>OSPF</dt>
+				<dd>Open Shortest Path First</dd>
+			</div>
+			<div><dt>OSS</dt>
+				<dd>Open Sound System</dd>
+			</div>
+			<div><dt>OSS</dt>
+				<dd>Open-Source Software</dd>
+			</div>
+			<div><dt>OSS</dt>
+				<dd>Operations Support System</dd>
+			</div>
+			<div><dt>OSTG</dt>
+				<dd>Open Source Technology Group</dd>
+			</div>
+			<div><dt>OTP</dt>
+				<dd>One-time password</dd>
+			</div>
+			<div><dt>OUI</dt>
+				<dd>Organizationally Unique Identifier</dd>
+			</div>
+			<div><dt>P2P</dt>
+				<dd>Peer-To-Peer</dd>
+			</div>
+			<div><dt>PaaS</dt>
+				<dd>Platform as a Service</dd>
+			</div>
+			<div><dt>PAM</dt>
+				<dd>Privileged Access Management</dd>
+			</div>
+			<div><dt>PAN</dt>
+				<dd>Personal Area Network</dd>
+			</div>
+			<div><dt>PAP</dt>
+				<dd>Password Authentication Protocol</dd>
+			</div>
+			<div><dt>PARC</dt>
+				<dd>Palo Alto Research Center</dd>
+			</div>
+			<div><dt>PATA</dt>
+				<dd>Parallel ATA</dd>
+			</div>
+			<div><dt>PBS</dt>
+				<dd>Portable Batch System</dd>
+			</div>
+			<div><dt>PC</dt>
+				<dd>Personal Computer</dd>
+			</div>
+			<div><dt>PCB</dt>
+				<dd>Printed Circuit Board</dd>
+			</div>
+			<div><dt>PCB</dt>
+				<dd>Process Control Block</dd>
+			</div>
+			<div><dt>PC DOS</dt>
+				<dd>Personal Computer Disc Operating System</dd>
+			</div>
+			<div><dt>PCI</dt>
+				<dd>Peripheral Component Interconnect</dd>
+			</div>
+			<div><dt>PCIe</dt>
+				<dd>PCI Express</dd>
+			</div>
+			<div><dt>PCI-X</dt>
+				<dd>PCI Extended</dd>
+			</div>
+			<div><dt>PCL</dt>
+				<dd>Printer Command Language</dd>
+			</div>
+			<div><dt>PCMCIA</dt>
+				<dd>Personal Computer Memory Card International Association</dd>
+			</div>
+			<div><dt>PCM</dt>
+				<dd>Pulse-Code Modulation</dd>
+			</div>
+			<div><dt>PCRE</dt>
+				<dd>Perl Compatible Regular Expressions</dd>
+			</div>
+			<div><dt>PD</dt>
+				<dd>Public Domain</dd>
+			</div>
+			<div><dt>PDA</dt>
+				<dd>Personal Digital Assistant</dd>
+			</div>
+			<div><dt>PDF</dt>
+				<dd>Portable Document Format</dd>
+			</div>
+			<div><dt>PDH</dt>
+				<dd>Plesiochronous Digital Hierarchy</dd>
+			</div>
+			<div><dt>PDP</dt>
+				<dd>Programmed Data Processor</dd>
+			</div>
+			<div><dt>PE</dt>
+				<dd>Physical Extents</dd>
+			</div>
+			<div><dt>PE</dt>
+				<dd>Portable Executable</dd>
+			</div>
+			<div><dt>PERL</dt>
+				<dd>Practical Extraction and Reporting Language</dd>
+			</div>
+			<div><dt>PFA</dt>
+				<dd>Please Find Attachment</dd>
+			</div>
+			<div><dt>PG</dt>
+				<dd>Peripheral Gateway</dd>
+			</div>
+			<div><dt>PGA</dt>
+				<dd>Pin Grid Array</dd>
+			</div>
+			<div><dt>PGA</dt>
+				<dd>Programmable Gate Array</dd>
+			</div>
+			<div><dt>PGO</dt>
+				<dd>Profile-Guided Optimization</dd>
+			</div>
+			<div><dt>PGP</dt>
+				<dd>Pretty Good Privacy</dd>
+			</div>
+			<div><dt>PHP</dt>
+				<dd>Hypertext Preprocessor</dd>
+			</div>
+			<div><dt>PIC</dt>
+				<dd>Peripheral Interface Controller</dd>
+			</div>
+			<div><dt>PIC</dt>
+				<dd>Programmable Interrupt Controller</dd>
+			</div>
+			<div><dt>PID</dt>
+				<dd>Proportional-Integral-Derivative</dd>
+			</div>
+			<div><dt>PID</dt>
+				<dd>Process ID</dd>
+			</div>
+			<div><dt>PIM</dt>
+				<dd>Personal Information Manager</dd>
+			</div>
+			<div><dt>PINE</dt>
+				<dd>Program for Internet News and Email</dd>
+			</div>
+			<div><dt>PING</dt>
+				<dd>Packet Internet Gopher</dd>
+			</div>
+			<div><dt>PIO</dt>
+				<dd>Programmed Input/Output</dd>
+			</div>
+			<div><dt>Pixel</dt>
+				<dd>Picture element</dd>
+			</div>
+			<div><dt>PKCS</dt>
+				<dd>Public Key Cryptography Standards</dd>
+			</div>
+			<div><dt>PKI</dt>
+				<dd>Public Key Infrastructure</dd>
+			</div>
+			<div><dt>PLC</dt>
+				<dd>Power-Line Communication</dd>
+			</div>
+			<div><dt>PLC</dt>
+				<dd>Programmable logic controller</dd>
+			</div>
+			<div><dt>PLD</dt>
+				<dd>Programmable logic device</dd>
+			</div>
+			<div><dt>PL/I</dt>
+				<dd>Programming Language One</dd>
+			</div>
+			<div><dt>PL/M</dt>
+				<dd>Programming Language for Microcomputers</dd>
+			</div>
+			<div><dt>PL/P</dt>
+				<dd>Programming Language for Prime</dd>
+			</div>
+			<div><dt>PLT</dt>
+				<dd>Power-Line Telecommunications</dd>
+			</div>
+			<div><dt>PMM</dt>
+				<dd>POST Memory Manager</dd>
+			</div>
+			<div><dt>PNG</dt>
+				<dd>Portable Network Graphics</dd>
+			</div>
+			<div><dt>PnP</dt>
+				<dd>Plug-and-Play</dd>
+			</div>
+			<div><dt>PNRP</dt>
+				<dd>Peer Name Resolution Protocol</dd>
+			</div>
+			<div><dt>PoE</dt>
+				<dd>Power over Ethernet</dd>
+			</div>
+			<div><dt>PoS</dt>
+				<dd>Point of Sale</dd>
+			</div>
+			<div><dt>POCO</dt>
+				<dd>Plain Old Class Object</dd>
+			</div>
+			<div><dt>POID</dt>
+				<dd>Persistent Object Identifier</dd>
+			</div>
+			<div><dt>POJO</dt>
+				<dd>Plain Old Java Object</dd>
+			</div>
+			<div><dt>POP</dt>
+				<dd>Point of Presence</dd>
+			</div>
+			<div><dt>POP3</dt>
+				<dd>Post Office Protocol v3</dd>
+			</div>
+			<div><dt>POSIX</dt>
+				<dd>Portable Operating System Interface, formerly IEEE-IX</dd>
+			</div>
+			<div><dt>POST</dt>
+				<dd>Power-On Self Test</dd>
+			</div>
+			<div><dt>PPC</dt>
+				<dd>PowerPC</dd>
+			</div>
+			<div><dt>PPI</dt>
+				<dd>Pixels Per Inch</dd>
+			</div>
+			<div><dt>PPM</dt>
+				<dd>Pages Per Minute</dd>
+			</div>
+			<div><dt>PPP</dt>
+				<dd>Point-to-Point Protocol</dd>
+			</div>
+			<div><dt>PPPoA</dt>
+				<dd>PPP over ATM</dd>
+			</div>
+			<div><dt>PPPoE</dt>
+				<dd>PPP over Ethernet</dd>
+			</div>
+			<div><dt>PPTP</dt>
+				<dd>Point-to-Point Tunneling Protocol</dd>
+			</div>
+			<div><dt>PR</dt>
+				<dd>Pull Request</dd>
+			</div>
+			<div><dt>PROM</dt>
+				<dd>Programmable Read-Only Memory</dd>
+			</div>
+			<div><dt>PS</dt>
+				<dd>PostScript</dd>
+			</div>
+			<div><dt>PS/2</dt>
+				<dd>Personal System/2</dd>
+			</div>
+			<div><dt>PSA</dt>
+				<dd>Professional Services Automation</dd>
+			</div>
+			<div><dt>PSM</dt>
+				<dd>Platform Specific Model</dd>
+			</div>
+			<div><dt>PSTN</dt>
+				<dd>Public Switched Telephone Network</dd>
+			</div>
+			<div><dt>PSU</dt>
+				<dd>Power Supply Unit</dd>
+			</div>
+			<div><dt>PSVI</dt>
+				<dd>Post-Schema-Validation Infoset</dd>
+			</div>
+			<div><dt>PTS-DOS</dt>
+				<dd>PhysTechSoft – Disk Operating System</dd>
+			</div>
+			<div><dt>PV</dt>
+				<dd>Physical Volume</dd>
+			</div>
+			<div><dt>PVG</dt>
+				<dd>Physical Volume Group</dd>
+			</div>
+			<div><dt>PVR</dt>
+				<dd>Personal Video Recorder</dd>
+			</div>
+			<div><dt>PXE</dt>
+				<dd>Preboot Execution Environment</dd>
+			</div>
+			<div><dt>PXI</dt>
+				<dd>PCI eXtensions for Instrumentation</dd>
+			</div>
+			<div><dt>PRC</dt>
+				<dd>Procedure Remote Call</dd>
+			</div>
+			<div><dt>QDR</dt>
+				<dd>Quad Data Rate</dd>
+			</div>
+			<div><dt>QA</dt>
+				<dd>Quality Assurance</dd>
+			</div>
+			<div><dt>QFP</dt>
+				<dd>Quad Flat Package</dd>
+			</div>
+			<div><dt>QoS</dt>
+				<dd>Quality of Service</dd>
+			</div>
+			<div><dt>QOTD</dt>
+				<dd>Quote of the Day</dd>
+			</div>
+			<div><dt>Qt</dt>
+				<dd>Quasar Toolkit[citation needed]</dd>
+			</div>
+			<div><dt>QTAM</dt>
+				<dd>Queued Teleprocessing Access Method</dd>
+			</div>
+			<div><dt>QSOP</dt>
+				<dd>Quarter Small Outline Package</dd>
+			</div>
+			<div><dt>qWave</dt>
+				<dd>Quality Windows Audio/Video Experience</dd>
+			</div>
+			<div><dt>RACF</dt>
+				<dd>Resource Access Control Facility</dd>
+			</div>
+			<div><dt>RAD</dt>
+				<dd>Rapid Application Development</dd>
+			</div>
+			<div><dt>RADIUS</dt>
+				<dd>Remote Authentication Dial In User Service</dd>
+			</div>
+			<div><dt>RAID</dt>
+				<dd>Redundant Array of Independent Disks</dd>
+			</div>
+			<div><dt>RAII</dt>
+				<dd>Resource Acquisition Is Initialization</dd>
+			</div>
+			<div><dt>RAIT</dt>
+				<dd>Redundant Array of Inexpensive Tapes</dd>
+			</div>
+			<div><dt>RAM</dt>
+				<dd>Random-Access Memory</dd>
+			</div>
+			<div><dt>RARP</dt>
+				<dd>Reverse Address Resolution Protocol</dd>
+			</div>
+			<div><dt>RAS</dt>
+				<dd>Reliability, Availability and Serviceability</dd>
+			</div>
+			<div><dt>RAS</dt>
+				<dd>Remote access service</dd>
+			</div>
+			<div><dt>RC</dt>
+				<dd>Region Code</dd>
+			</div>
+			<div><dt>RC</dt>
+				<dd>Release Candidate</dd>
+			</div>
+			<div><dt>RC</dt>
+				<dd>Run Commands</dd>
+			</div>
+			<div><dt>RCA</dt>
+				<dd>Root Cause Analysis</dd>
+			</div>
+			<div><dt>RCP</dt>
+				<dd>Reality Coprocesser</dd>
+			</div>
+			<div><dt>RCS</dt>
+				<dd>Revision Control System</dd>
+			</div>
+			<div><dt>RD</dt>
+				<dd>Remote Desktop</dd>
+			</div>
+			<div><dt>rd</dt>
+				<dd>remove directory</dd>
+			</div>
+			<div><dt>RDBMS</dt>
+				<dd>Relational Database Management System</dd>
+			</div>
+			<div><dt>RDC</dt>
+				<dd>Remote Desktop Connection</dd>
+			</div>
+			<div><dt>RDF</dt>
+				<dd>Resource Description Framework</dd>
+			</div>
+			<div><dt>RDM</dt>
+				<dd>Relational Data Model</dd>
+			</div>
+			<div><dt>RDOS</dt>
+				<dd>Real-time Disk Operating System</dd>
+			</div>
+			<div><dt>RDP</dt>
+				<dd>Remote Desktop Protocol</dd>
+			</div>
+			<div><dt>RDS</dt>
+				<dd>Remote Data Services</dd>
+			</div>
+			<div><dt>REFAL</dt>
+				<dd>Recursive Functions Algorithmic Language</dd>
+			</div>
+			<div><dt>REP</dt>
+				<dd>RAID Error Propagation</dd>
+			</div>
+			<div><dt>REST</dt>
+				<dd>Representational State Transfer</dd>
+			</div>
+			<div><dt>RESV</dt>
+				<dd>Reservation Message</dd>
+			</div>
+			<div><dt>regex</dt>
+				<dd>Regular Expression</dd>
+			</div>
+			<div><dt>regexp</dt>
+				<dd>Regular Expression</dd>
+			</div>
+			<div><dt>RF</dt>
+				<dd>Radio Frequency</dd>
+			</div>
+			<div><dt>RFC</dt>
+				<dd>Request For Comments</dd>
+			</div>
+			<div><dt>RFI</dt>
+				<dd>Radio Frequency Interference</dd>
+			</div>
+			<div><dt>RFID</dt>
+				<dd>Radio Frequency Identification</dd>
+			</div>
+			<div><dt>RGB</dt>
+				<dd>Red, Green, Blue</dd>
+			</div>
+			<div><dt>RGBA</dt>
+				<dd>Red, Green, Blue, Alpha</dd>
+			</div>
+			<div><dt>RHL</dt>
+				<dd>Red Hat Linux</dd>
+			</div>
+			<div><dt>RHEL</dt>
+				<dd>Red Hat Enterprise Linux</dd>
+			</div>
+			<div><dt>REXX</dt>
+				<dd>Restructured Extended Executor Language</dd>
+			</div>
+			<div><dt>RIA</dt>
+				<dd>Rich Internet Application</dd>
+			</div>
+			<div><dt>RIAA</dt>
+				<dd>Recording Industry Association of America</dd>
+			</div>
+			<div><dt>RIP</dt>
+				<dd>Raster Image Processor</dd>
+			</div>
+			<div><dt>RIP</dt>
+				<dd>Routing Information Protocol</dd>
+			</div>
+			<div><dt>RIR</dt>
+				<dd>Regional Internet registry</dd>
+			</div>
+			<div><dt>RISC</dt>
+				<dd>Reduced Instruction Set Computer</dd>
+			</div>
+			<div><dt>RISC OS</dt>
+				<dd>Reduced Instruction Set Computer Operating System</dd>
+			</div>
+			<div><dt>RJE</dt>
+				<dd>Remote Job Entry</dd>
+			</div>
+			<div><dt>RLE</dt>
+				<dd>Run-Length Encoding</dd>
+			</div>
+			<div><dt>RLL</dt>
+				<dd>Run-Length Limited</dd>
+			</div>
+			<div><dt>rmdir</dt>
+				<dd>remove directory</dd>
+			</div>
+			<div><dt>RMI</dt>
+				<dd>Remote Method Invocation</dd>
+			</div>
+			<div><dt>RMS</dt>
+				<dd>Richard Matthew Stallman</dd>
+			</div>
+			<div><dt>ROM</dt>
+				<dd>Read-Only Memory</dd>
+			</div>
+			<div><dt>ROMB</dt>
+				<dd>Read-Out Motherboard</dd>
+			</div>
+			<div><dt>ROM-DOS</dt>
+				<dd>Read-Only Memory – Disk Operating System</dd>
+			</div>
+			<div><dt>RPA</dt>
+				<dd>Robotic Process Automation</dd>
+			</div>
+			<div><dt>RPC</dt>
+				<dd>Remote Procedure Call</dd>
+			</div>
+			<div><dt>RPG</dt>
+				<dd>Report Program Generator</dd>
+			</div>
+			<div><dt>RPM</dt>
+				<dd>RPM Package Manager</dd>
+			</div>
+			<div><dt>RRAS</dt>
+				<dd>Routing and Remote Access Service</dd>
+			</div>
+			<div><dt>RSA</dt>
+				<dd>Rivest Shamir Adleman</dd>
+			</div>
+			<div><dt>RSI</dt>
+				<dd>Repetitive Strain Injury</dd>
+			</div>
+			<div><dt>RSS</dt>
+				<dd>Radio Service Software</dd>
+			</div>
+			<div><dt>RSS</dt>
+				<dd>Rich Site Summary, RDF Site Summary, or Really Simple Syndication</dd>
+			</div>
+			<div><dt>RSVP</dt>
+				<dd>Resource Reservation Protocol</dd>
+			</div>
+			<div><dt>RTAI</dt>
+				<dd>Real-Time Application Interface</dd>
+			</div>
+			<div><dt>RTC</dt>
+				<dd>Real-Time Clock</dd>
+			</div>
+			<div><dt>RTE</dt>
+				<dd>Real-Time Enterprise</dd>
+			</div>
+			<div><dt>RTEMS</dt>
+				<dd>Real-Time Executive for Multiprocessor Systems</dd>
+			</div>
+			<div><dt>RTF</dt>
+				<dd>Rich Text Format</dd>
+			</div>
+			<div><dt>RTL</dt>
+				<dd>Right-to-Left</dd>
+			</div>
+			<div><dt>RTMP</dt>
+				<dd>Real Time Messaging Protocol</dd>
+			</div>
+			<div><dt>RTOS</dt>
+				<dd>Real-Time Operating System</dd>
+			</div>
+			<div><dt>RTP</dt>
+				<dd>Real-time Transport Protocol</dd>
+			</div>
+			<div><dt>RTS</dt>
+				<dd>Ready To Send</dd>
+			</div>
+			<div><dt>RTSP</dt>
+				<dd>Real Time Streaming Protocol</dd>
+			</div>
+			<div><dt>RTTI</dt>
+				<dd>Run-time Type Information</dd>
+			</div>
+			<div><dt>RTU</dt>
+				<dd>Remote Terminal Unit</dd>
+			</div>
+			<div><dt>RWD</dt>
+				<dd>Responsive Web Design</dd>
+			</div>
+			<div><dt>SaaS</dt>
+				<dd>Software as a Service</dd>
+			</div>
+			<div><dt>SASS</dt>
+				<dd>Syntactically Awesome Style Sheets</dd>
+			</div>
+			<div><dt>SAM</dt>
+				<dd>Security Account Manager</dd>
+			</div>
+			<div><dt>SAN</dt>
+				<dd>Storage Area Network</dd>
+			</div>
+			<div><dt>SAS</dt>
+				<dd>Serial attached SCSI</dd>
+			</div>
+			<div><dt>SATA</dt>
+				<dd>Serial ATA</dd>
+			</div>
+			<div><dt>SAX</dt>
+				<dd>Simple API for XML</dd>
+			</div>
+			<div><dt>SBOD</dt>
+				<dd>Spinning Beachball of Death</dd>
+			</div>
+			<div><dt>SBP-2</dt>
+				<dd>Serial Bus Protocol 2</dd>
+			</div>
+			<div><dt>sbin</dt>
+				<dd>superuser binary</dd>
+			</div>
+			<div><dt>sbs</dt>
+				<dd>Small Business Server</dd>
+			</div>
+			<div><dt>SBU</dt>
+				<dd>Standard Build Unit</dd>
+			</div>
+			<div><dt>SCADA</dt>
+				<dd>Supervisory Control And Data Acquisition</dd>
+			</div>
+			<div><dt>SCID</dt>
+				<dd>Source Code in Database</dd>
+			</div>
+			<div><dt>SCM</dt>
+				<dd>Software Configuration Management</dd>
+			</div>
+			<div><dt>SCM</dt>
+				<dd>Source Code Management</dd>
+			</div>
+			<div><dt>SCP</dt>
+				<dd>Secure Copy</dd>
+			</div>
+			<div><dt>SCPC</dt>
+				<dd>Single Channel Per Carrier</dd>
+			</div>
+			<div><dt>SCPI</dt>
+				<dd>Standard Commands for Programmable Instrumentation</dd>
+			</div>
+			<div><dt>SCSA</dt>
+				<dd>Secure Content Storage Association</dd>
+			</div>
+			<div><dt>SCSI</dt>
+				<dd>Small Computer System Interface</dd>
+			</div>
+			<div><dt>SCTP</dt>
+				<dd>Stream Control Transmission Protocol</dd>
+			</div>
+			<div><dt>SD</dt>
+				<dd>Secure Digital</dd>
+			</div>
+			<div><dt>SDDL</dt>
+				<dd>Security Descriptor Definition Language</dd>
+			</div>
+			<div><dt>SDH</dt>
+				<dd>Synchronous Digital Hierarchy</dd>
+			</div>
+			<div><dt>SDI</dt>
+				<dd>Single-Document Interface</dd>
+			</div>
+			<div><dt>SEC</dt>
+				<dd>Single Edge Contact</dd>
+			</div>
+			<div><dt>SDIO</dt>
+				<dd>Secure Digital Input Output</dd>
+			</div>
+			<div><dt>SDK</dt>
+				<dd>Software Development Kit</dd>
+			</div>
+			<div><dt>SDL</dt>
+				<dd>Simple DirectMedia Layer</dd>
+			</div>
+			<div><dt>SDN</dt>
+				<dd>Service Delivery Network</dd>
+			</div>
+			<div><dt>SDP</dt>
+				<dd>Session Description Protocol</dd>
+			</div>
+			<div><dt>SDR</dt>
+				<dd>Software-Defined Radio</dd>
+			</div>
+			<div><dt>SDRAM</dt>
+				<dd>Synchronous Dynamic Random-Access Memory</dd>
+			</div>
+			<div><dt>SDSL</dt>
+				<dd>Symmetric DSL</dd>
+			</div>
+			<div><dt>SE</dt>
+				<dd>Single Ended</dd>
+			</div>
+			<div><dt>SEI</dt>
+				<dd>Software Engineering Institute</dd>
+			</div>
+			<div><dt>SEO</dt>
+				<dd>Search Engine Optimization</dd>
+			</div>
+			<div><dt>SFTP</dt>
+				<dd>Secure FTP</dd>
+			</div>
+			<div><dt>SFTP</dt>
+				<dd>Simple File Transfer Protocol</dd>
+			</div>
+			<div><dt>SFTP</dt>
+				<dd>SSH File Transfer Protocol</dd>
+			</div>
+			<div><dt>SGI</dt>
+				<dd>Silicon Graphics, Incorporated</dd>
+			</div>
+			<div><dt>SGML</dt>
+				<dd>Standard Generalized Markup Language</dd>
+			</div>
+			<div><dt>SGR</dt>
+				<dd>Select Graphic Rendition</dd>
+			</div>
+			<div><dt>SHA</dt>
+				<dd>Secure Hash Algorithm</dd>
+			</div>
+			<div><dt>SHDSL</dt>
+				<dd>Single-pair High-speed Digital Subscriber Line</dd>
+			</div>
+			<div><dt>SIEM</dt>
+				<dd>Security information and event management</dd>
+			</div>
+			<div><dt>SIGCAT</dt>
+				<dd>Special Interest Group on CD-ROM Applications and Technology</dd>
+			</div>
+			<div><dt>SIGGRAPH</dt>
+				<dd>Special Interest Group on Graphics</dd>
+			</div>
+			<div><dt>SIMD</dt>
+				<dd>Single Instruction, Multiple Data</dd>
+			</div>
+			<div><dt>SIM</dt>
+				<dd>Subscriber Identification Module</dd>
+			</div>
+			<div><dt>SIMM</dt>
+				<dd>Single Inline Memory Module</dd>
+			</div>
+			<div><dt>SIP</dt>
+				<dd>Session Initiation Protocol</dd>
+			</div>
+			<div><dt>SIP</dt>
+				<dd>Supplementary Ideographic Plane</dd>
+			</div>
+			<div><dt>SISD</dt>
+				<dd>Single Instruction, Single Data</dd>
+			</div>
+			<div><dt>SISO</dt>
+				<dd>Single-Input and Single-Output</dd>
+			</div>
+			<div><dt>SLA</dt>
+				<dd>Service Level Agreement</dd>
+			</div>
+			<div><dt>SLED</dt>
+				<dd>SUSE Linux Enterprise Desktop</dd>
+			</div>
+			<div><dt>SLES</dt>
+				<dd>SUSE Linux Enterprise Server</dd>
+			</div>
+			<div><dt>SLI</dt>
+				<dd>Scalable Link Interface</dd>
+			</div>
+			<div><dt>SLIP</dt>
+				<dd>Serial Line Internet Protocol</dd>
+			</div>
+			<div><dt>SLM</dt>
+				<dd>Service Level Management</dd>
+			</div>
+			<div><dt>SLOC</dt>
+				<dd>Source Lines of Code</dd>
+			</div>
+			<div><dt>SME</dt>
+				<dd>Subject Matter Expert</dd>
+			</div>
+			<div><dt>SMF</dt>
+				<dd>Single-Mode (optical) Fiber</dd>
+			</div>
+			<div><dt>SPM</dt>
+				<dd>Software project management</dd>
+			</div>
+			<div><dt>SPMD</dt>
+				<dd>Single Program, Multiple Data</dd>
+			</div>
+			<div><dt>SPOF</dt>
+				<dd>Single point of failure</dd>
+			</div>
+			<div><dt>SMA</dt>
+				<dd>SubMiniature version A</dd>
+			</div>
+			<div><dt>SMB</dt>
+				<dd>Server Message Block</dd>
+			</div>
+			<div><dt>SMBIOS</dt>
+				<dd>System Management BIOS</dd>
+			</div>
+			<div><dt>SMIL</dt>
+				<dd>Synchronized Multimedia Integration Language</dd>
+			</div>
+			<div><dt>S/MIME</dt>
+				<dd>Secure/Multipurpose Internet Mail Extensions</dd>
+			</div>
+			<div><dt>SMP</dt>
+				<dd>Supplementary Multilingual Plane</dd>
+			</div>
+			<div><dt>SMP</dt>
+				<dd>Symmetric Multi-Processing</dd>
+			</div>
+			<div><dt>SMPS</dt>
+				<dd>Switch Mode Power Supply</dd>
+			</div>
+			<div><dt>SMS</dt>
+				<dd>Short Message Service</dd>
+			</div>
+			<div><dt>SMS</dt>
+				<dd>System Management Server</dd>
+			</div>
+			<div><dt>SMT</dt>
+				<dd>Simultaneous Multithreading</dd>
+			</div>
+			<div><dt>SMTP</dt>
+				<dd>Simple Mail Transfer Protocol</dd>
+			</div>
+			<div><dt>SNA</dt>
+				<dd>Systems Network Architecture</dd>
+			</div>
+			<div><dt>SNMP</dt>
+				<dd>Simple Network Management Protocol</dd>
+			</div>
+			<div><dt>SNTP</dt>
+				<dd>Simple Network Time Protocol</dd>
+			</div>
+			<div><dt>SOA</dt>
+				<dd>Service-Oriented Architecture</dd>
+			</div>
+			<div><dt>SOAP</dt>
+				<dd>Simple Object Access Protocol</dd>
+			</div>
+			<div><dt>SOAP</dt>
+				<dd>Symbolic Optimal Assembly Program</dd>
+			</div>
+			<div><dt>SOPA</dt>
+				<dd>Stop Online Piracy Act</dd>
+			</div>
+			<div><dt>SoC</dt>
+				<dd>System-on-a-Chip</dd>
+			</div>
+			<div><dt>SO-DIMM</dt>
+				<dd>Small Outline DIMM</dd>
+			</div>
+			<div><dt>SOE</dt>
+				<dd>Standard Operating Environment</dd>
+			</div>
+			<div><dt>SOHO</dt>
+				<dd>Small Office/Home Office</dd>
+			</div>
+			<div><dt>SOI</dt>
+				<dd>Silicon On Insulator</dd>
+			</div>
+			<div><dt>SOLID</dt>
+				<dd>Single-responsibility, Open-closed, Liskov substitution, Interface segregation, Dependency Inversion</dd>
+			</div>
+			<div><dt>SP</dt>
+				<dd>Service Pack</dd>
+			</div>
+			<div><dt>SPA</dt>
+				<dd>Single Page Application</dd>
+			</div>
+			<div><dt>SPF</dt>
+				<dd>Sender Policy Framework</dd>
+			</div>
+			<div><dt>SPI</dt>
+				<dd>Serial Peripheral Interface</dd>
+			</div>
+			<div><dt>SPI</dt>
+				<dd>Stateful Packet Inspection</dd>
+			</div>
+			<div><dt>SPARC</dt>
+				<dd>Scalable Processor Architecture</dd>
+			</div>
+			<div><dt>SQL</dt>
+				<dd>Structured Query Language</dd>
+			</div>
+			<div><dt>SRAM</dt>
+				<dd>Static Random-Access Memory</dd>
+			</div>
+			<div><dt>SSA</dt>
+				<dd>Static Single Assignment</dd>
+			</div>
+			<div><dt>SSD</dt>
+				<dd>Software Specification Document</dd>
+			</div>
+			<div><dt>SSD</dt>
+				<dd>Solid-State Drive</dd>
+			</div>
+			<div><dt>SSDP</dt>
+				<dd>Simple Service Discovery Protocol</dd>
+			</div>
+			<div><dt>SSE</dt>
+				<dd>Streaming SIMD Extensions</dd>
+			</div>
+			<div><dt>SSH</dt>
+				<dd>Secure Shell</dd>
+			</div>
+			<div><dt>SSI</dt>
+				<dd>Server Side Includes</dd>
+			</div>
+			<div><dt>SSI</dt>
+				<dd>Single-System Image</dd>
+			</div>
+			<div><dt>SSI</dt>
+				<dd>Small-Scale Integration</dd>
+			</div>
+			<div><dt>SSID</dt>
+				<dd>Service Set Identifier</dd>
+			</div>
+			<div><dt>SSL</dt>
+				<dd>Secure Socket Layer</dd>
+			</div>
+			<div><dt>SSO</dt>
+				<dd>Single Sign On</dd>
+			</div>
+			<div><dt>SSP</dt>
+				<dd>Supplementary Special-purpose Plane</dd>
+			</div>
+			<div><dt>SSR</dt>
+				<dd>Server Side Rendering</dd>
+			</div>
+			<div><dt>SSSE</dt>
+				<dd>Supplementary Streaming SIMD Extensions</dd>
+			</div>
+			<div><dt>SSSP</dt>
+				<dd>Single Source Shortest Path</dd>
+			</div>
+			<div><dt>SSTP</dt>
+				<dd>Secure Socket Tunneling Protocol</dd>
+			</div>
+			<div><dt>su</dt>
+				<dd>superuser</dd>
+			</div>
+			<div><dt>SUS</dt>
+				<dd>Single UNIX Specification</dd>
+			</div>
+			<div><dt>SUSE</dt>
+				<dd>Software und System-Entwicklung</dd>
+			</div>
+			<div><dt>SVC</dt>
+				<dd>Scalable Video Coding</dd>
+			</div>
+			<div><dt>SVG</dt>
+				<dd>Scalable Vector Graphics</dd>
+			</div>
+			<div><dt>SVGA</dt>
+				<dd>Super Video Graphics Array</dd>
+			</div>
+			<div><dt>SVD</dt>
+				<dd>Structured VLSI Design</dd>
+			</div>
+			<div><dt>SWF</dt>
+				<dd>Shock Wave Flash</dd>
+			</div>
+			<div><dt>SWT</dt>
+				<dd>Standard Widget Toolkit</dd>
+			</div>
+			<div><dt>Sysop</dt>
+				<dd>System operator</dd>
+			</div>
+			<div><dt>TAO</dt>
+				<dd>Track-At-Once</dd>
+			</div>
+			<div><dt>TAPI</dt>
+				<dd>Telephony Application Programming Interface</dd>
+			</div>
+			<div><dt>TASM</dt>
+				<dd>Turbo ASseMbler</dd>
+			</div>
+			<div><dt>TB</dt>
+				<dd>TeraByte</dd>
+			</div>
+			<div><dt>Tcl</dt>
+				<dd>Tool Command Language</dd>
+			</div>
+			<div><dt>TCP</dt>
+				<dd>Transmission Control Protocol</dd>
+			</div>
+			<div><dt>TCP/IP</dt>
+				<dd>Transmission Control Protocol/Internet Protocol</dd>
+			</div>
+			<div><dt>TCU</dt>
+				<dd>Telecommunication Control Unit</dd>
+			</div>
+			<div><dt>TDMA</dt>
+				<dd>Time-Division Multiple Access</dd>
+			</div>
+			<div><dt>TDP</dt>
+				<dd>Thermal Design Power</dd>
+			</div>
+			<div><dt>TFT</dt>
+				<dd>Thin-Film Transistor</dd>
+			</div>
+			<div><dt>TFTP</dt>
+				<dd>Trivial File Transfer Protocol</dd>
+			</div>
+			<div><dt>TI</dt>
+				<dd>Texas Instruments</dd>
+			</div>
+			<div><dt>TIFF</dt>
+				<dd>Tagged Image File Format</dd>
+			</div>
+			<div><dt>TLA</dt>
+				<dd>Three-Letter Acronym</dd>
+			</div>
+			<div><dt>TLD</dt>
+				<dd>Top-Level Domain</dd>
+			</div>
+			<div><dt>TLS</dt>
+				<dd>Thread-Local Storage</dd>
+			</div>
+			<div><dt>TLS</dt>
+				<dd>Transport Layer Security</dd>
+			</div>
+			<div><dt>TLV</dt>
+				<dd>Type—length—value</dd>
+			</div>
+			<div><dt>tmp</dt>
+				<dd>temporary</dd>
+			</div>
+			<div><dt>TNC</dt>
+				<dd>Terminal Node Controller</dd>
+			</div>
+			<div><dt>TNC</dt>
+				<dd>Threaded Neill-Concelman connector</dd>
+			</div>
+			<div><dt>TPF</dt>
+				<dd>Transaction Processing Facility</dd>
+			</div>
+			<div><dt>TPM</dt>
+				<dd>Trusted Platform Module</dd>
+			</div>
+			<div><dt>TROFF</dt>
+				<dd>Trace Off</dd>
+			</div>
+			<div><dt>TRON</dt>
+				<dd>Trace On</dd>
+			</div>
+			<div><dt>TRON</dt>
+				<dd>The Real-time Operating system Nucleus</dd>
+			</div>
+			<div><dt>TRSDOS</dt>
+				<dd>Tandy Radio Shack – Disk Operating System</dd>
+			</div>
+			<div><dt>TSO</dt>
+				<dd>Time Sharing Option</dd>
+			</div>
+			<div><dt>TSP</dt>
+				<dd>Traveling Salesman Problem</dd>
+			</div>
+			<div><dt>TSR</dt>
+				<dd>Terminate and Stay Resident</dd>
+			</div>
+			<div><dt>TTA</dt>
+				<dd>True Tap Audio</dd>
+			</div>
+			<div><dt>TTF</dt>
+				<dd>TrueType Font</dd>
+			</div>
+			<div><dt>TTL</dt>
+				<dd>Transistor—Transistor Logic</dd>
+			</div>
+			<div><dt>TTL</dt>
+				<dd>Time To Live</dd>
+			</div>
+			<div><dt>TTS</dt>
+				<dd>Text-to-Speech</dd>
+			</div>
+			<div><dt>TTY</dt>
+				<dd>Teletype</dd>
+			</div>
+			<div><dt>TUCOWS</dt>
+				<dd>The Ultimate Collection of Winsock Software</dd>
+			</div>
+			<div><dt>TUG</dt>
+				<dd>TeX Users Group</dd>
+			</div>
+			<div><dt>TWAIN</dt>
+				<dd>Technology Without An Interesting Name</dd>
+			</div>
+			<div><dt>UAAG</dt>
+				<dd>User Agent Accessibility Guidelines</dd>
+			</div>
+			<div><dt>UAC</dt>
+				<dd>User Account Control</dd>
+			</div>
+			<div><dt>UART</dt>
+				<dd>Universal Asynchronous Receiver/Transmitter</dd>
+			</div>
+			<div><dt>UAT</dt>
+				<dd>User Acceptance Testing</dd>
+			</div>
+			<div><dt>UB</dt>
+				<dd>Undefined Behavior</dd>
+			</div>
+			<div><dt>UCS</dt>
+				<dd>Universal Character Set</dd>
+			</div>
+			<div><dt>UDDI</dt>
+				<dd>Universal Description, Discovery, and Integration</dd>
+			</div>
+			<div><dt>UDMA</dt>
+				<dd>Ultra DMA</dd>
+			</div>
+			<div><dt>UDP</dt>
+				<dd>User Datagram Protocol</dd>
+			</div>
+			<div><dt>UEFI</dt>
+				<dd>Unified Extensible Firmware Interface</dd>
+			</div>
+			<div><dt>UHF</dt>
+				<dd>Ultra High Frequency</dd>
+			</div>
+			<div><dt>UI</dt>
+				<dd>User Interface</dd>
+			</div>
+			<div><dt>UL</dt>
+				<dd>Upload</dd>
+			</div>
+			<div><dt>ULA</dt>
+				<dd>Uncommitted Logic Array</dd>
+			</div>
+			<div><dt>ULSI</dt>
+				<dd>Ultra Large Scale Integration</dd>
+			</div>
+			<div><dt>UMA</dt>
+				<dd>Upper Memory Area</dd>
+			</div>
+			<div><dt>UMB</dt>
+				<dd>Upper Memory Block</dd>
+			</div>
+			<div><dt>UML</dt>
+				<dd>Unified Modeling Language</dd>
+			</div>
+			<div><dt>UML</dt>
+				<dd>User-Mode Linux</dd>
+			</div>
+			<div><dt>UMPC</dt>
+				<dd>Ultra-Mobile Personal Computer</dd>
+			</div>
+			<div><dt>UMTS</dt>
+				<dd>Universal Mobile Telecommunications System</dd>
+			</div>
+			<div><dt>UNC</dt>
+				<dd>Universal Naming Convention</dd>
+			</div>
+			<div><dt>UNIVAC</dt>
+				<dd>Universal Automatic Computer (By MKS)</dd>
+			</div>
+			<div><dt>UPS</dt>
+				<dd>Uninterruptible Power Supply or Uninterrupted Power Supply</dd>
+			</div>
+			<div><dt>URI</dt>
+				<dd>Uniform Resource Identifier</dd>
+			</div>
+			<div><dt>URL</dt>
+				<dd>Uniform Resource Locator</dd>
+			</div>
+			<div><dt>URN</dt>
+				<dd>Uniform Resource Name</dd>
+			</div>
+			<div><dt>USB</dt>
+				<dd>Universal Serial Bus</dd>
+			</div>
+			<div><dt>usr</dt>
+				<dd>User System Resources</dd>
+			</div>
+			<div><dt>USR</dt>
+				<dd>U.S. Robotics</dd>
+			</div>
+			<div><dt>UTC</dt>
+				<dd>Coordinated Universal Time</dd>
+			</div>
+			<div><dt>UTF</dt>
+				<dd>Unicode Transformation Format</dd>
+			</div>
+			<div><dt>UTP</dt>
+				<dd>Unshielded Twisted Pair</dd>
+			</div>
+			<div><dt>UTRAN</dt>
+				<dd>Universal Terrestrial Radio Access Network</dd>
+			</div>
+			<div><dt>UUCP</dt>
+				<dd>Unix to Unix Copy</dd>
+			</div>
+			<div><dt>UUID</dt>
+				<dd>Universally Unique Identifier</dd>
+			</div>
+			<div><dt>UUN</dt>
+				<dd>Universal User Name</dd>
+			</div>
+			<div><dt>UVC</dt>
+				<dd>Universal Virtual Computer</dd>
+			</div>
+			<div><dt>UWP</dt>
+				<dd>Universal Windows Platform</dd>
+			</div>
+			<div><dt>UX</dt>
+				<dd>User Experience</dd>
+			</div>
+			<div><dt>var</dt>
+				<dd>variable</dd>
+			</div>
+			<div><dt>VoLTE</dt>
+				<dd>Voice Over Long Term Evolution</dd>
+			</div>
+			<div><dt>VAX</dt>
+				<dd>Virtual Address eXtension</dd>
+			</div>
+			<div><dt>VCPI</dt>
+				<dd>Virtual Control Program Interface</dd>
+			</div>
+			<div><dt>VB</dt>
+				<dd>Visual Basic</dd>
+			</div>
+			<div><dt>VBA</dt>
+				<dd>Visual Basic for Applications</dd>
+			</div>
+			<div><dt>VBS</dt>
+				<dd>Visual Basic Script</dd>
+			</div>
+			<div><dt>VDI</dt>
+				<dd>Virtual Desktop Infrastructure</dd>
+			</div>
+			<div><dt>VDU</dt>
+				<dd>Visual Display Unit</dd>
+			</div>
+			<div><dt>VDM</dt>
+				<dd>Virtual DOS machine</dd>
+			</div>
+			<div><dt>VDSL</dt>
+				<dd>Very High Bitrate Digital Subscriber Line</dd>
+			</div>
+			<div><dt>VESA</dt>
+				<dd>Video Electronics Standards Association</dd>
+			</div>
+			<div><dt>VFAT</dt>
+				<dd>Virtual FAT</dd>
+			</div>
+			<div><dt>VHD</dt>
+				<dd>Virtual Hard Disk</dd>
+			</div>
+			<div><dt>VFS</dt>
+				<dd>Virtual File System</dd>
+			</div>
+			<div><dt>VG</dt>
+				<dd>Volume Group</dd>
+			</div>
+			<div><dt>VGA</dt>
+				<dd>Video Graphics Array</dd>
+			</div>
+			<div><dt>VHF</dt>
+				<dd>Very High Frequency</dd>
+			</div>
+			<div><dt>VIRUS</dt>
+				<dd>Vital Information Resource Under Seize</dd>
+			</div>
+			<div><dt>VLAN</dt>
+				<dd>Virtual Local Area Network</dd>
+			</div>
+			<div><dt>VLSM</dt>
+				<dd>Variable-length subnet masking</dd>
+			</div>
+			<div><dt>VLB</dt>
+				<dd>Vesa Local Bus</dd>
+			</div>
+			<div><dt>VLF</dt>
+				<dd>Very Low Frequency</dd>
+			</div>
+			<div><dt>VLIW</dt>
+				<dd>Very Long Instruction Word</dd>
+			</div>
+			<div><dt>VLSI</dt>
+				<dd>Very-Large-Scale Integration</dd>
+			</div>
+			<div><dt>VM</dt>
+				<dd>Virtual Machine</dd>
+			</div>
+			<div><dt>VM</dt>
+				<dd>Virtual Memory</dd>
+			</div>
+			<div><dt>VMM</dt>
+				<dd>Virtual Machine Monitor</dd>
+			</div>
+			<div><dt>VNC</dt>
+				<dd>Virtual Network Computing</dd>
+			</div>
+			<div><dt>VOD</dt>
+				<dd>Video On Demand</dd>
+			</div>
+			<div><dt>VoIP</dt>
+				<dd>Voice over Internet Protocol</dd>
+			</div>
+			<div><dt>VPN</dt>
+				<dd>Virtual Private Network</dd>
+			</div>
+			<div><dt>VPS</dt>
+				<dd>Virtual Private Server</dd>
+			</div>
+			<div><dt>VPU</dt>
+				<dd>Visual Processing Unit</dd>
+			</div>
+			<div><dt>VR</dt>
+				<dd>Virtual Reality</dd>
+			</div>
+			<div><dt>VRML</dt>
+				<dd>Virtual Reality Modeling Language</dd>
+			</div>
+			<div><dt>VSAM</dt>
+				<dd>Virtual Storage-Access Method</dd>
+			</div>
+			<div><dt>VSAT</dt>
+				<dd>Very Small Aperture Terminal</dd>
+			</div>
+			<div><dt>VT</dt>
+				<dd>Video Terminal</dd>
+			</div>
+			<div><dt>VTL</dt>
+				<dd>Virtual Tape Library</dd>
+			</div>
+			<div><dt>VTAM</dt>
+				<dd>Virtual Telecommunications Access Method</dd>
+			</div>
+			<div><dt>VRAM</dt>
+				<dd>Video Random-Access Memory</dd>
+			</div>
+			<div><dt>W3C</dt>
+				<dd>World Wide Web Consortium</dd>
+			</div>
+			<div><dt>WWDC</dt>
+				<dd>Apple World Wide Developer Conference</dd>
+			</div>
+			<div><dt>WAFS</dt>
+				<dd>Wide Area File Services</dd>
+			</div>
+			<div><dt>WAI</dt>
+				<dd>Web Accessibility Initiative</dd>
+			</div>
+			<div><dt>WAIS</dt>
+				<dd>Wide Area Information Server</dd>
+			</div>
+			<div><dt>WAN</dt>
+				<dd>Wide Area Network</dd>
+			</div>
+			<div><dt>WAP</dt>
+				<dd>Wireless Access Point</dd>
+			</div>
+			<div><dt>WAP</dt>
+				<dd>Wireless Application Protocol</dd>
+			</div>
+			<div><dt>WASM</dt>
+				<dd>Watcom ASseMbler</dd>
+			</div>
+			<div><dt>WBEM</dt>
+				<dd>Web-Based Enterprise Management</dd>
+			</div>
+			<div><dt>WCAG</dt>
+				<dd>Web Content Accessibility Guidelines</dd>
+			</div>
+			<div><dt>WCF</dt>
+				<dd>Windows Communication Foundation</dd>
+			</div>
+			<div><dt>WDM</dt>
+				<dd>Wavelength-Division Multiplexing</dd>
+			</div>
+			<div><dt>WebDAV</dt>
+				<dd>WWW Distributed Authoring and Versioning</dd>
+			</div>
+			<div><dt>WEP</dt>
+				<dd>Wired Equivalent Privacy</dd>
+			</div>
+			<div><dt>WFI</dt>
+				<dd>Wait For Interrupt</dd>
+			</div>
+			<div><dt>WiMAX</dt>
+				<dd>Worldwide Interoperability for Microwave Access</dd>
+			</div>
+			<div><dt>WinFS</dt>
+				<dd>Windows Future Storage</dd>
+			</div>
+			<div><dt>WinRT</dt>
+				<dd>Windows RunTime</dd>
+			</div>
+			<div><dt>WINS</dt>
+				<dd>Windows Internet Name Service</dd>
+			</div>
+			<div><dt>WLAN</dt>
+				<dd>Wireless Local Area Network</dd>
+			</div>
+			<div><dt>WMA</dt>
+				<dd>Windows Media Audio</dd>
+			</div>
+			<div><dt>WMI</dt>
+				<dd>Windows Management Instrumentation</dd>
+			</div>
+			<div><dt>WMV</dt>
+				<dd>Windows Media Video</dd>
+			</div>
+			<div><dt>WNS</dt>
+				<dd>Windows Push Notification Service</dd>
+			</div>
+			<div><dt>WOL</dt>
+				<dd>Wake-on-LAN</dd>
+			</div>
+			<div><dt>WOR</dt>
+				<dd>Wake-on-Ring</dd>
+			</div>
+			<div><dt>WORA</dt>
+				<dd>Write once, run anywhere</dd>
+			</div>
+			<div><dt>WORE</dt>
+				<dd>Write once, run everywhere</dd>
+			</div>
+			<div><dt>WORM</dt>
+				<dd>Write Once Read Many</dd>
+			</div>
+			<div><dt>WPA</dt>
+				<dd>Wi-Fi Protected Access</dd>
+			</div>
+			<div><dt>WPAD</dt>
+				<dd>Web Proxy Autodiscovery Protocol</dd>
+			</div>
+			<div><dt>WPAN</dt>
+				<dd>Wireless Personal Area Network</dd>
+			</div>
+			<div><dt>WPF</dt>
+				<dd>Windows Presentation Foundation</dd>
+			</div>
+			<div><dt>WS-D</dt>
+				<dd>Web Services-Discovery</dd>
+			</div>
+			<div><dt>WSDL</dt>
+				<dd>Web Services Description Language</dd>
+			</div>
+			<div><dt>WSFL</dt>
+				<dd>Web Services Flow Language</dd>
+			</div>
+			<div><dt>WUSB</dt>
+				<dd>Wireless Universal Serial Bus</dd>
+			</div>
+			<div><dt>WWAN</dt>
+				<dd>Wireless Wide Area Network</dd>
+			</div>
+			<div><dt>WWID</dt>
+				<dd>World Wide Identifier</dd>
+			</div>
+			<div><dt>WWN</dt>
+				<dd>World Wide Name</dd>
+			</div>
+			<div><dt>WWW</dt>
+				<dd>World Wide Web</dd>
+			</div>
+			<div><dt>WYSIWYG</dt>
+				<dd>What You See Is What You Get</dd>
+			</div>
+			<div><dt>WZC</dt>
+				<dd>Wireless Zero Configuration</dd>
+			</div>
+			<div><dt>XAML</dt>
+				<dd>eXtensible Application Markup Language</dd>
+			</div>
+			<div><dt>XDM</dt>
+				<dd>X Window Display Manager</dd>
+			</div>
+			<div><dt>XDMCP</dt>
+				<dd>X Display Manager Control Protocol</dd>
+			</div>
+			<div><dt>XCBL</dt>
+				<dd>XML Common Business Library</dd>
+			</div>
+			<div><dt>XHTML</dt>
+				<dd>eXtensible Hypertext Markup Language</dd>
+			</div>
+			<div><dt>XILP</dt>
+				<dd>X Interactive ListProc</dd>
+			</div>
+			<div><dt>XML</dt>
+				<dd>eXtensible Markup Language</dd>
+			</div>
+			<div><dt>XMMS</dt>
+				<dd>X Multimedia System</dd>
+			</div>
+			<div><dt>XMPP</dt>
+				<dd>eXtensible Messaging and Presence Protocol</dd>
+			</div>
+			<div><dt>XMS</dt>
+				<dd>Extended Memory Specification</dd>
+			</div>
+			<div><dt>XNS</dt>
+				<dd>Xerox Network Systems</dd>
+			</div>
+			<div><dt>XP</dt>
+				<dd>Cross-Platform</dd>
+			</div>
+			<div><dt>XP</dt>
+				<dd>Extreme Programming</dd>
+			</div>
+			<div><dt>XPCOM</dt>
+				<dd>Cross Platform Component Object Model</dd>
+			</div>
+			<div><dt>XPI</dt>
+				<dd>XPInstall</dd>
+			</div>
+			<div><dt>XPIDL</dt>
+				<dd>Cross-Platform IDL</dd>
+			</div>
+			<div><dt>XPS</dt>
+				<dd>XML Paper Specification</dd>
+			</div>
+			<div><dt>XSD</dt>
+				<dd>XML Schema Definition</dd>
+			</div>
+			<div><dt>XSL</dt>
+				<dd>eXtensible Stylesheet Language</dd>
+			</div>
+			<div><dt>XSL-FO</dt>
+				<dd>eXtensible Stylesheet Language Formatting Objects</dd>
+			</div>
+			<div><dt>XSLT</dt>
+				<dd>eXtensible Stylesheet Language Transformations</dd>
+			</div>
+			<div><dt>XSS</dt>
+				<dd>Cross-Site Scripting</dd>
+			</div>
+			<div><dt>XTF</dt>
+				<dd>eXtensible Tag Framework</dd>
+			</div>
+			<div><dt>XTF</dt>
+				<dd>eXtended Triton Format</dd>
+			</div>
+			<div><dt>XUL</dt>
+				<dd>XML User Interface Language</dd>
+			</div>
+			<div><dt>XVGA</dt>
+				<dd>Extended Video Graphics Adapter</dd>
+			</div>
+			<div><dt>Y2K</dt>
+				<dd>Year Two Thousand</dd>
+			</div>
+			<div><dt>Y2K38</dt>
+				<dd>Year Two Thousand Thirty Eight</dd>
+			</div>
+			<div><dt>YAAF</dt>
+				<dd>Yet Another Application Framework</dd>
+			</div>
+			<div><dt>YACC</dt>
+				<dd>Yet Another Compiler Compiler</dd>
+			</div>
+			<div><dt>YAGNI</dt>
+				<dd>You Aren't Gonna Need It</dd>
+			</div>
+			<div><dt>YAML</dt>
+				<dd>YAML Ain't Markup Language</dd>
+			</div>
+			<div><dt>YARN</dt>
+				<dd>Yet Another Resource Negotiator</dd>
+			</div>
+			<div><dt>YaST</dt>
+				<dd>Yet another Setup Tool</dd>
+			</div>
+			<div><dt>ZCAV</dt>
+				<dd>Zone Constant Angular Velocity</dd>
+			</div>
+			<div><dt>ZCS</dt>
+				<dd>Zero Code Suppression</dd>
+			</div>
+			<div><dt>ZIF</dt>
+				<dd>Zero Insertion Force</dd>
+			</div>
+			<div><dt>ZIFS</dt>
+				<dd>Zero Insertion Force Socket</dd>
+			</div>
+			<div><dt>ZIP</dt>
+				<dd>ZIP file archive</dd>
+			</div>
+			<div><dt>ZISC</dt>
+				<dd>Zero Instruction Set Computer</dd>
+			</div>
+			<div><dt>ZOI</dt>
+				<dd>Zero One Infinity</dd>
+			</div>
+			<div><dt>ZOPE</dt>
+				<dd>Z Object Publishing Environment</dd>
+			</div>
+			<div><dt>ZMA</dt>
+				<dd>Zone Multicast Address</dd>
+			</div>
+			<div><dt>ZPL</dt>
+				<dd>Z-level Programming Language</dd>
+			</div>
+		</div>
+	</body>
+</html>
